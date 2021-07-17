@@ -6,6 +6,7 @@
 </head>
 <body>
 
+<!--View-->
 <div id="count">
     <h2>当计数:{{count}}</h2>
     <!--增加-->
@@ -17,11 +18,22 @@
 </body>
 <script src="js/vue.js"></script>
 <script>
+    /**
+     * Model
+     * @type {{count: number}}
+     *
+     * vue会自动做一层proxy,将对象中的属性动态代理到Vue的data属性中
+     */
+    const obj = {
+        count: 0,
+    }
+
+    /**
+     * ViewModel
+     */
     let demo = new Vue({
         el: '#count',
-        data: {
-            count: 0,
-        },
+        data: obj,
         /**
          * method 和 methods 属性用于在Vue对象中定义方法
          * @click 该指定用于监听元素的点击事件, 并且需要指定当点击事件发生时执行的方法(通常是在methods属性中定义的方法)
