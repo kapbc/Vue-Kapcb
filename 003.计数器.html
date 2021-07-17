@@ -17,7 +17,7 @@
 </body>
 <script src="js/vue.js"></script>
 <script>
-    let vue = new Vue({
+    let demo = new Vue({
         el: '#count',
         data: {
             count: 0,
@@ -29,6 +29,11 @@
          */
         methods: {
             increase() {
+                /**
+                 * 不要直接使用 count, 直接使用会在<script>标签内部找全局变量
+                 * 也不要使用 demo.count,
+                 * this.count 表示在当前对象的data中寻找count (使用this.)
+                 */
                 this.count++;
                 this.alertMessage("点击了增加按钮");
             },
@@ -44,7 +49,7 @@
              * @param message String
              */
             alertMessage: function (message) {
-                alert(message);
+                console.log(message);
             },
         }
     });
