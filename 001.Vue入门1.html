@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Vue入门</title>
 </head>
+
+<!--在vue中定义的数据使用{{}}进行取值显示-->
+<div id="app">{{message}}</div>
+
 <body>
 <script src="js/vue.js"></script>
 <script>
@@ -19,7 +23,7 @@
     // let(ES6中定义变量,定义后可以修改) / const(ES6中定义常量,定义后不能修改)
 
     // 定义常量
-    const name ="kapcb";
+    const name = "kapcb";
     const pass = "123456";
     let person = new Person(name, pass);
 
@@ -27,8 +31,20 @@
     let password = person.password;
     console.log("username is : " + username + " password is : " + password);
 
-    let newVar = {};
-    new Vue(newVar)
+    // 将<div id="app"></div>使用vue进行挂在, 挂在之后vue会对其进行管理
+    //
+    const app = new Vue({
+        el: '#app', // 用于挂载需要使用vue管理的元素
+        // 定义数据
+        data: {
+            message: '你好,' + name + "!",// 在页面元素标签中使用{{}}取值显示
+        }
+    });
+
+    // 原始js的代码
+    // 1.创建div元素,设置id属性
+    // 2.定义一个变量 message
+    // 3.将message变量放在前面声明的div元素中进行显示
 </script>
 </body>
 </html>
