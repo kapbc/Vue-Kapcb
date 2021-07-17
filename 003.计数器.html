@@ -7,11 +7,12 @@
 <body>
 
 <div id="count">
-    <h2>{{count}}</h2>
+    <h2>当计数:{{count}}</h2>
     <!--增加-->
     <button @click="increase">+</button>
     <!--减少-->
-    <button @click="decrease">-</button>
+    <button v-on:click="decrease">-</button>
+    <!--    <button v-on:click="count&#45;&#45;">-</button>-->
 </div>
 </body>
 <script src="js/vue.js"></script>
@@ -24,19 +25,27 @@
         /**
          * method 和 methods 属性用于在Vue对象中定义方法
          * @click 该指定用于监听元素的点击事件, 并且需要指定当点击事件发生时执行的方法(通常是在methods属性中定义的方法)
+         * v-on:(事件) 表示监听的事件
          */
         methods: {
             increase() {
-                console.log("点击了增加按钮");
                 this.count++;
+                this.alertMessage("点击了增加按钮");
             },
             decrease() {
-                console.log("点击减少按钮");
                 if (this.count === 0) {
                     return;
                 }
                 this.count--;
-            }
+                this.alertMessage("点击减少按钮");
+            },
+            /**
+             * 传统方式定义方法
+             * @param message String
+             */
+            alertMessage: function (message) {
+                alert(message);
+            },
         }
     });
 </script>
