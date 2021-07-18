@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mustache</title>
+</head>
+<body>
+
+<div id="demo">
+  <!--Mustache语法,使用{{}}进行插值-->
+  <h2>{{message}}</h2>
+  <!--可以对结果进行拼接-->
+  <h2>{{message}} {{messageSuffix}}</h2>
+  <!--可以是一个表达式-->
+  <h2>{{count + 1}}</h2>
+  <h3>{{firstName + " " + lastName}}</h3>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: document.getElementById('demo'),
+    data: {
+      message: 'kapcb nb',
+      messageSuffix: "bad",
+      count: 1,
+      firstName: 'Mike',
+      lastName: 'Chen'
+    }
+  });
+</script>
+</html>
