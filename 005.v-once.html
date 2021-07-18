@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-once</title>
+</head>
+<body>
+
+<div id="demo">
+  <h2>{{message}}</h2>
+  <!--v-once: 只会显示在第一次展示数据的时候的的值,后面值改变了不会影响-->
+  <h2 v-once>{{message}}</h2>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo  = new Vue({
+    el: '#demo',
+    data: {
+      message: "Hello Kapcb",
+    }
+  });
+</script>
+</html>
