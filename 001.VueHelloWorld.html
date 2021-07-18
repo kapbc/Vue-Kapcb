@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Vu Hello World</title>
+  <meta charset="UTF-8">
+  <title>Vu Hello World</title>
 </head>
 
 <!--在vue中定义的数据使用{{}}进行取值显示-->
 <div id="app">
-    <h1>{{message}}</h1>
-    <h2>{{description}}</h2>
+  <h1>{{message}}</h1>
+  <h2>{{description}}</h2>
 </div>
 
 <body>
 <script src="js/vue.js"></script>
 <script>
-    // 在一个script中定义一个Person的构造器, 可以在另外一个script中进行引用
-    // 引入vue.js之后,也可以使用该方式在代码中应用vue中的方法
-    function Person(username, password) {
-        return {username, password};
-    };
+  // 在一个script中定义一个Person的构造器, 可以在另外一个script中进行引用
+  // 引入vue.js之后,也可以使用该方式在代码中应用vue中的方法
+  function Person(username, password) {
+    return {username, password};
+  };
 
 </script>
 
 <script>
-    // let(ES6中定义变量,定义后可以修改) / const(ES6中定义常量,定义后不能修改)
+  // let(ES6中定义变量,定义后可以修改) / const(ES6中定义常量,定义后不能修改)
 
-    // 定义常量
-    const name = "kapcb";
-    const pass = "123456";
-    let person = new Person(name, pass);
+  // 定义常量
+  const name = "kapcb";
+  const pass = "123456";
+  let person = new Person(name, pass);
 
-    let username = person.username;
-    let password = person.password;
-    console.log("username is : " + username + " password is : " + password);
+  let username = person.username;
+  let password = person.password;
+  console.log("username is : " + username + " password is : " + password);
 
-    // 将<div id="app"></div>使用vue进行挂在, 挂在之后vue会对其进行管理
-    // 编程范式:声明式编程
-    // 数据与页面分离,解耦
-    const app = new Vue({
-        el: '#app', // 用于挂载需要使用vue管理的元素
-        // 定义数据
-        data: {
-            message: '你好,' + name + "!",// 在页面元素标签中使用{{}}取值显示
-            description: 'kapcb nb',
-        }
-    });
+  // 将<div id="app"></div>使用vue进行挂在, 挂在之后vue会对其进行管理
+  // 编程范式:声明式编程
+  // 数据与页面分离,解耦
+  const app = new Vue({
+    el: '#app', // 用于挂载需要使用vue管理的元素
+    // 定义数据
+    data: {
+      message: '你好,' + name + "!",// 在页面元素标签中使用{{}}取值显示
+      description: 'kapcb nb',
+    }
+  });
 
-    console.log(app.$el);
-    console.log(app.$data.message);
+  console.log(app.$el);
+  console.log(app.$data.message);
 
-    // 原始js的代码(编程范式:命令式编程)
-    // 1.创建div元素,设置id属性
-    // 2.定义一个变量 message
-    // 3.将message变量放在前面声明的div元素中进行显示
+  // 原始js的代码(编程范式:命令式编程)
+  // 1.创建div元素,设置id属性
+  // 2.定义一个变量 message
+  // 3.将message变量放在前面声明的div元素中进行显示
 </script>
 </body>
 </html>
