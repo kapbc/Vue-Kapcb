@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind</title>
+</head>
+<body>
+
+<div id="demo">
+  <p>{{content}}</p>
+  <!--使用v-bind绑定image的url给到img元素的src属性值-->
+  <a target="_blank" v-bind:href="url" style="text-decoration: none">
+    <img v-bind:src="image" alt="绑定图片">
+  </a>
+
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      content: '巫妖王之怒',
+      url: 'http://www.baidu.com',
+      image: 'https://img1.baidu.com/it/u=122800726,3359089251&fm=26&fmt=auto&gp=0.jpg',
+    },
+  });
+</script>
+</html>
