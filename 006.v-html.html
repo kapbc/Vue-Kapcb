@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-html</title>
+</head>
+<body>
+
+<div id="demo" v-html="alertMessage"></div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  new Vue({
+    el: '#demo',
+    data: {
+      alertMessage: "<p style=\"color: orange;width: 100px;text-align: center;font-size: 15px\">Hello Kapcb</p>"
+    }
+  })
+</script>
+</html>
