@@ -65,6 +65,15 @@
             alertMessage: function (message) {
                 console.log(message);
             },
+        },
+        beforeCreate: function () {
+            console.log("Vue Call Back before create method");
+        },
+        created: function () {
+            console.log("Vue Call Back created method");
+        },
+        mounted: function () {
+            console.log("Vue Call Back mounted method");
         }
     });
 </script>
