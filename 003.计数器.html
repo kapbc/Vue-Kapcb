@@ -32,7 +32,9 @@
      * ViewModel
      */
     let demo = new Vue({
-        el: '#count',
+        // el: 可以是字符串,也可以是HTMLElement
+        // el: '#count',
+        el: document.getElementById('count'),
         data: obj,
         /**
          * method 和 methods 属性用于在Vue对象中定义方法
