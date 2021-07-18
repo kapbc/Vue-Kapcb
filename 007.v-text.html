@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-text</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3>{{message}}, Kapcb</h3>
+<!--v-text会覆盖掉原字符串', Kapcb'-->
+  <h3 v-text="message">, Kapcb</h3>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      message: 'Hello',
+    },
+  });
+</script>
+</html>
