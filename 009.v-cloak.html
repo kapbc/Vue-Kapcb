@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-cloak</title>
+  <style>
+      /**
+       * 在元素中有v-cloak属性时, 就不显示
+       */
+      [v-cloak] {
+          display: none;
+      }
+  </style>
+</head>
+<body>
+<div id="demo" v-cloak>{{message}}</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  /**
+   * 延迟5秒在创建Vue实例
+   * 在vue对解析之前, div中有一个属性v-cloak
+   * 在vue解析完之后, div中就没有属性v-cloak(vue解析完成之后会自动移除这个属性)
+   * 相当于vue对元素解析之前与解析完成之后的标记
+   */
+  setTimeout(function () {
+    console.log("begin to create vue instance!");
+    let demo = new Vue({
+      el: '#demo',
+      data: {
+        message: 'Hello Kapcb',
+      },
+    });
+  }, 5000);
+</script>
+</html>
