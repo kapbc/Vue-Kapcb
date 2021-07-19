@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind动态绑定class</title>
+  <style>
+      .active {
+          font-size: 15px;
+          color: orange;
+      }
+
+      .inActive {
+          font-size: 15px;
+          color: coral;
+      }
+  </style>
+</head>
+<body>
+
+<div id="demo">
+  <h3 class="active">{{message}}</h3>
+  <!--可以绑定一个类对象到class上,当类属性的值为false的时候,会移除为false的属性-->
+  <!--对象语法-->
+  <!--<h3 :class="{key1:value1,key2:value2}"></h3>-->
+  <!--<h3 :class="{class1:true,class2:false,class3:boolean}"></h3>-->
+  <h3 :class="classStyle">{{message}}</h3>
+  <button @click="clickActive">active</button>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let classStyle = {
+    active: true,
+    inActive: false
+  }
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      message: 'Hello, Kpacb!',
+      classStyle: classStyle,
+    },
+    methods: {
+      clickActive() {
+        this.classStyle.active = !this.classStyle.active;
+        this.classStyle.inActive = !this.classStyle.inActive;
+      }
+    }
+  })
+</script>
+</html>
