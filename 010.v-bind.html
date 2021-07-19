@@ -10,7 +10,8 @@
   <p>{{content}}</p>
   <!--使用v-bind绑定image的url给到img元素的src属性值-->
   <a target="_blank" v-bind:href="url" style="text-decoration: none">
-    <img v-bind:src="image" alt="绑定图片">
+    <!--语法糖的写法:使用:可以简写成v-bind-->
+    <img :src="image" alt="绑定图片">
   </a>
 
 </div>
