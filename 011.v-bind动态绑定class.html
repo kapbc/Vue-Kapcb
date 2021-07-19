@@ -24,7 +24,10 @@
   <!--<h3 :class="{key1:value1,key2:value2}"></h3>-->
   <!--<h3 :class="{class1:true,class2:false,class3:boolean}"></h3>-->
   <h3 :class="classStyle">{{message}}</h3>
-  <button @click="clickActive">active</button>
+  <!--这里调用方法是需要添加()的-->
+  <h3 :class="getClasses()">{{message}}</h3>
+  <!--这里调用方法可以不添加(),因为被省略了-->
+  <button @click="clickActive()">active</button>
 </div>
 
 </body>
@@ -46,6 +49,9 @@
       clickActive() {
         this.classStyle.active = !this.classStyle.active;
         this.classStyle.inActive = !this.classStyle.inActive;
+      },
+      getClasses: function () {
+        return {active: this.classStyle.active, inActive: this.classStyle.inActive}
       }
     }
   })
