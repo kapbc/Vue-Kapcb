@@ -3,8 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+      .active {
+          font-size: 15px;
+          color: coral;
+      }
+
+  </style>
 </head>
 <body>
 
+<div id="demo">
+  <!--如果是取vue中动态绑定的属性,则直接在数组内写属性值的key-->
+  <h2 class="kapcb" :class="[active,line]">{{message}}</h2>
+  <!--如果加上''就会当成字符串解析-->
+  <!--<h2 class="kapcb" :class="['active','line']">{{message}}</h2>-->
+</div>
+
 </body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      message: 'Hello Kapcb!',
+      active: 'active',
+      line: 'bbbb',
+    },
+  });
+</script>
 </html>
