@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind&v-for</title>
+  <style>
+      .active {
+          font-size: 15px;
+          color: red;
+      }
+  </style>
+</head>
+<body>
+
+<div id="demo">
+  <ul>
+    <li v-for="(item,index) in movies" :class="index == activeIndex ? 'active' : ''" @click="click(index)">{{item}}</li>
+  </ul>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const selection = ['挪威的森林', '灰色轨迹', '不再犹豫', '大地', '海阔天空'];
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      movies: selection,
+      activeIndex: -1,
+    },
+    methods: {
+      click(index) {
+        console.log('当前点击了 : ' + index);
+        this.activeIndex = index;
+      },
+    }
+  });
+</script>
+</html>
