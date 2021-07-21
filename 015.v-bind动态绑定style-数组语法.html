@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind动态绑定style-数组语法</title>
+</head>
+<body>
+
+<div id="demo">
+  <h2 :style="[colorStyle,fontStyle]">{{message}}</h2>
+</div>
+</body>
+
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      message: 'Hello Kapcb!',
+      fontColor: 'red',
+      fontSize: '15px',
+      colorStyle: {color: 'red'},
+      fontStyle: {fontSize: '15px'}
+    },
+  });
+</script>
+</html>
