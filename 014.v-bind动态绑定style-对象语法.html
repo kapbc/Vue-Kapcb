@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>v-bind动态绑定style-对象语法</title>
 </head>
-<body>
+<body onload="showHello({color: 'red', fontSize: '15px'})">
 
 <div id="demo">
   <!--<h2 :style="key(css的属性名称):value(css的属性值)">{{message}}</h2>-->
@@ -17,7 +17,7 @@
 
   let dynamicStyle = {color: 'red', fontSize: '15px'}
 
-  let showHello = function (dynamicStyle) {
+  let showHello = function (style) {
     let demo = new Vue({
       el: '#demo',
       data: {
