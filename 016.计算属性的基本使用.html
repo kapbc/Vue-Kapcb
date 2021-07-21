@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性的基本使用</title>
+</head>
+<body>
+
+<div id="demo">
+  <h2>{{fullName}}</h2>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      firstName: 'Mike',
+      lastName: 'Chen',
+    },
+    computed: {
+      fullName: function () {
+        return this.firstName + "-" + this.lastName;
+      }
+    }
+  });
+</script>
+</html>
