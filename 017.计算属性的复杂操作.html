@@ -51,20 +51,40 @@
       lastName: 'Chen'
     },
     computed: {
+
+      /**
+       * full name
+       * @returns {string}
+       */
       fullName: function () {
         return this.firstName + '-' + this.lastName;
       },
+
+      /**
+       * total cost
+       * @returns {number}
+       */
       totalCost() {
         return this.books.map(e => e.price).reduce(function (prev, cur, index, array) {
           console.log('prev value is : ' + prev + ' current value is : ' + cur + ' index is : ' + index + ' array is : ' + array);
-          return prev + cur;
+          return prev + cur
         });
       },
+
+      /**
+       * total cost
+       * @returns {number}
+       */
       totalCostTwo: function () {
         let total = 0;
         this.books.map(e => e.price).forEach(s => total += s);
         return total;
       },
+
+      /**
+       * total cost
+       * @returns {number}
+       */
       totalThree() {
         let total = 0;
         for (let i = 0; i < this.books.length; i++) {
