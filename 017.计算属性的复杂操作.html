@@ -8,6 +8,8 @@
 <div id="demo">
   <h3>full name : {{fullName}}</h3>
   <h3>total cost : {{totalCost}}</h3>
+  <h3>total cost : {{totalCostTwo}}</h3>
+  <h3>total cost : {{totalThree}}</h3>
 </div>
 </body>
 <script src="js/vue.js"></script>
@@ -53,12 +55,22 @@
         return this.firstName + '-' + this.lastName;
       },
       totalCost() {
-        return this.books.map(e => {
-          return e.price;
-        }).reduce(function (prev, cur, index, array) {
+        return this.books.map(e => e.price).reduce(function (prev, cur, index, array) {
           console.log('prev value is : ' + prev + ' current value is : ' + cur + ' index is : ' + index + ' array is : ' + array);
           return prev + cur;
         });
+      },
+      totalCostTwo: function () {
+        let total = 0;
+        this.books.map(e => e.price).forEach(s => total += s);
+        return total;
+      },
+      totalThree() {
+        let total = 0;
+        for (let i = 0; i < this.books.length; i++) {
+          total += this.books[i].price;
+        };
+        return total;
       },
     },
   });
