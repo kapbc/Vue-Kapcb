@@ -7,7 +7,15 @@
 <body>
 
 <div id="demo">
-  <h3></h3>
+  <!--属性直接调用即可, 不需要写()-->
+  <h3>计算属性 : {{fullName}}</h3>
+  <h3>计算属性 : {{fullName}}</h3>
+  <h3>计算属性 : {{fullName}}</h3>
+  <h3>计算属性 : {{fullName}}</h3>
+  <h3>methods : {{getFullName()}}</h3>
+  <h3>methods : {{getFullName()}}</h3>
+  <h3>methods : {{getFullName()}}</h3>
+  <h3>methods : {{getFullName()}}</h3>
 </div>
 </body>
 <script src="js/vue.js"></script>
@@ -15,12 +23,31 @@
 
 
   let demo = new Vue({
-    el:'#demo',
-    data:{},
-    computed:{
-
+    el: '#demo',
+    data: {
+      firstName: 'Mike',
+      lastName: 'Chen',
     },
-    methods:{},
+    computed: {
+      fullName: {
+        get() {
+          console.log('------------------调用computed get------------------');
+          return this.firstName + ' ' + this.lastName;
+        },
+        set(newValue) {
+          console.log('------------------调用computed set------------------');
+          const name = newValue.split(' ');
+          this.firstName = name[0];
+          this.lastName = name[1];
+        }
+      }
+    },
+    methods: {
+      getFullName: function () {
+        console.log('------------------调用methods------------------');
+        return this.firstName + ' ' + this.lastName;
+      }
+    },
   });
 </script>
 </html>
