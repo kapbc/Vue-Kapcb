@@ -8,13 +8,14 @@
 
 <div id="demo">
   <h3>{{allName}}</h3>
+  <h3>{{ownerName}}</h3>
 </div>
 
 </body>
 <script src="js/vue.js"></script>
 <script>
 
-  function Person(username, password, email, age, summary) {
+  Person:function Person(username, password, email, age, summary) {
     this.username = username;
     this.password = password;
     this.email = email;
@@ -34,22 +35,50 @@
         new Person("Jack", "dsadka", "111111@qq.com", 23, 1000),
         new Person("ToTo", "daskdba", "22222@qq.com", 24, 1000),
         new Person("Ruby", "23u12", "45454@qq.com", 33, 1000),
-      ]
+      ],
+      firstName: 'Kapcb',
+      lastName: 'Chen'
     },
     /**
      * computed中的方法会有缓存, 相比methods中
      * 的性能会更好
      */
     computed: {
-      allName: function () {
-        return this.userList.map((element, index, array) => element.summary).reduce((previousValue, currentValue, currentIndex, array) => {
-          console.log(previousValue);
-          return previousValue += currentValue;
-        })
-      },
-      setValue: function () {
 
+      /**
+       * 计算属性,当成属性使用即可,调用时不需要添加()
+       */
+      allName: {
+        /**
+         * get 方法会默认调用
+         * @returns {*}
+         */
+        get: function () {
+          console.log('---------------调用了get方法---------------')
+          return this.userList.map((element, index, array) => element.summary).reduce((previousValue, currentValue, currentIndex, array) => {
+            return previousValue += currentValue;
+          })
+        },
       },
+
+      ownerName: {
+        /**
+         * 计算属性一般是没有set方法的,
+         * 只有只读属性,如果没有set方法则直接简写即可
+         */
+        set: function (newValue) {
+          console.log('---------------调用了set方法---------------')
+          console.log('the new value is : ' + newValue);
+          let split = newValue.split(",");
+          this.firstName = split[0];
+          this.lastName = split[1];
+        },
+
+        get: function () {
+          console.log('---------------调用了get方法---------------')
+          return this.firstName + ' ' + this.lastName;
+        }
+      }
     },
     methods: {}
   });
