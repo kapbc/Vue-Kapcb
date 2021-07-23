@@ -10,6 +10,8 @@
   <h3>total cost : {{totalCost}}</h3>
   <h3>total cost : {{totalCostTwo}}</h3>
   <h3>total cost : {{totalThree}}</h3>
+  <h3>total cost : {{totalFour}}</h3>
+  <h3>total cost : {{totalFive}}</h3>
 </div>
 </body>
 <script src="js/vue.js"></script>
@@ -89,9 +91,35 @@
         let total = 0;
         for (let i = 0; i < this.books.length; i++) {
           total += this.books[i].price;
-        };
+        }
         return total;
       },
+
+      /**
+       * ES 6 写法
+       * of 直接拿到的是每个元素
+       * @returns {number}
+       */
+      totalFour() {
+        let total = 0;
+        for (let book of this.books) {
+          total += book.price;
+        }
+        return total;
+      },
+
+      /**
+       * ES 6 写法
+       * in 拿到的是下标
+       * @returns {number}
+       */
+      totalFive() {
+        let total = 0;
+        for (let index in this.books) {
+          total += this.books[index].price;
+        }
+        return total;
+      }
     },
   });
 </script>
