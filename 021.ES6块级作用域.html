@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6块级作用域</title>
+</head>
+<body>
+
+</body>
+<script>
+  /**
+   * 1、变量作用域: 变量在什么范围内是可用的
+   * var声明之后类似全局变量, 在一个代码块中声明的变量
+   * 在代码块外部可以引用到, 这样会造成变量声明多了之后
+   * 1、变量名不够用
+   * 2、变量混淆
+   */
+
+  console.log('提前声明 : ' + name);
+
+  {
+    var name = 'Kapcb';
+    console.log('在代码块中执行 : ' + name);
+  }
+
+  console.log('声明之后在代码块后执行 : ' + name);
+
+  if (true) {
+    var firstName = 'Mike';
+
+    func = function () {
+      console.log('在循环内部的函数中执行 : ' + firstName);
+    }();
+
+    // func();
+  }
+
+  console.log('在代码块外部执行 : ' + firstName);
+</script>
+</html>
