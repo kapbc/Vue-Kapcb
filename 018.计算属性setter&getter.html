@@ -72,7 +72,7 @@
         set: function (newValue) {
           console.log('---------------调用了set方法---------------')
           console.log('the new value is : ' + newValue);
-          let split = newValue.split(",");
+          const split = newValue.split(" ");
           this.firstName = split[0];
           this.lastName = split[1];
         },
