@@ -6,5 +6,38 @@
 </head>
 <body>
 
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
 </body>
+<script src="js/vue.js"></script>
+<script>
+
+  var btns = document.getElementsByTagName('button');
+
+  for (var i = 0; i < btns.length; i++) {
+    /**
+     * 为每个按钮添加监听点击事件
+     */
+    btns[i].addEventListener('click', function () {
+      // console.log('点击第 : ' + btn.innerHTML + ' 按钮!');
+      /**
+       * 不论点击哪个按钮, 都会显示 点击第 : 5 按钮!
+       * 这就是因为for循环中的i是遍历改变了, i变成了5
+       */
+      console.log('点击第 : ' + i + ' 按钮!');
+    });
+  }
+
+  let buttons = document.getElementsByTagName('button');
+  for (let button of buttons) {
+    button.addEventListener('click', function () {
+      console.log('buttons--点击第 : ' + button.innerHTML + ' 按钮!');
+    });
+  }
+
+
+</script>
 </html>
