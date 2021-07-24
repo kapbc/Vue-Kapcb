@@ -6,16 +6,40 @@
 </head>
 <body>
 
-<div id="demo">
-  <h3></h3>
-</div>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
 
 </body>
-<script src="js/vue.js"></script>
 <script>
 
-  let demo = new Vue({
-    el:''
-  });
+  let elementsByTagName = document.getElementsByTagName('button');
+
+  /**
+   * 使用var会有作用域问题
+   */
+  for (var i = 0; i < elementsByTagName.length; i++) {
+    /**
+     * 闭包解决i的作用域问题
+     */
+    (function (i) {
+      var index = i + 1;
+      elementsByTagName[i].addEventListener('click', function () {
+        console.log('点击第 : ' + index + ' 按钮!');
+      })
+    })(i);
+  }
+
+  /**
+   * let 声明变量解决var作用域问题
+   */
+  for (let i = 0; i < elementsByTagName.length; i++) {
+    elementsByTagName[i].addEventListener('click', function () {
+      console.log('let--点击第 : ' + (i + 1) + ' 按钮!');
+    });
+  }
+
 </script>
 </html>

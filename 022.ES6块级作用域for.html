@@ -18,6 +18,7 @@
   var btns = document.getElementsByTagName('button');
 
   for (var i = 0; i < btns.length; i++) {
+
     /**
      * 为每个按钮添加监听点击事件
      */
@@ -27,7 +28,7 @@
        * 不论点击哪个按钮, 都会显示 点击第 : 5 按钮!
        * 这就是因为for循环中的i是遍历改变了, i变成了5
        */
-      console.log('点击第 : ' + i + ' 按钮!');
+      console.log('点击第 : ' + (i + 1) + ' 按钮!');
     });
   }
 
