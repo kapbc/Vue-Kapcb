@@ -23,6 +23,16 @@
   for (var i = 0; i < elementsByTagName.length; i++) {
     /**
      * 闭包解决i的作用域问题
+     * 函数有作用域的,
+     * 闭包类似于java中的变量, 在方法签名中声明, 在方法的代码块中生效
+     *
+     * ES5之前因为if和for都没有块级作用域的概念, 所以在很多时候都必须借助function的作用域
+     * 解决引用外部变量的问题(匿名函数自调用)
+     *
+     * ES6中加入了let, let它是有if和for的块级作用域
+     *
+     * ES5中的var是没有块级作用域的(ES5中只有function有作用域)
+     * ES6中的let是有块级作用域的(if/for)
      */
     (function (i) {
       var index = i + 1;

@@ -17,6 +17,12 @@
 
   var btns = document.getElementsByTagName('button');
 
+
+  /**
+   * var声明的变量没有作用域的概念
+   * for循环中,相当于每循环遍历一次,i的值都会被下一次循环遍历的值所修改
+   * 所以不论点击哪个按钮都是第5个
+   */
   for (var i = 0; i < btns.length; i++) {
 
     /**
