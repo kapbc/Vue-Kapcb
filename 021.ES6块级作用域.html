@@ -24,7 +24,9 @@
   }
 
   console.log('声明之后在代码块后执行 : ' + name);
-
+  /**
+   * if、for都没有块级作用域
+   */
   if (true) {
     var firstName = 'Mike';
 
@@ -36,5 +38,7 @@
   }
 
   console.log('在代码块外部执行 : ' + firstName);
+
+
 </script>
 </html>
