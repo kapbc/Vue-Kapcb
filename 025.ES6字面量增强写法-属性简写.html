@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6字面量增强写法-属性简写</title>
+</head>
+<body>
+
+</body>
+<script>
+  /**
+   * 什么是对象字面量
+   * {} 就是对象字面量
+   */
+      // const obj1= new Object(); 实际开发中声明对象都不这样写
+  const obj = {};
+
+  /**
+   * ES6之前
+   * 1.属性的简写
+   */
+  var name = 'Kpacb';
+  var age = 18;
+  var person = {
+    name: name,
+    age: age,
+  }
+
+  console.log('ES6之前对象写法 : ');
+  console.log(person);
+
+  /**
+   * ES6之后
+   * ES6中属性和值的名称一样可以简写, 比如 name:name 可以简写为 name
+   */
+  const per = {
+    name,
+    age,
+    run: function (name) {
+      console.log(name + ' 在奔跑');
+    },
+    eat(name) {
+      console.log(name + ' 在吃东西');
+    }
+  }
+  console.log('ES6之后对象写法 : ');
+  console.log(per);
+
+  per.eat(per.name);
+  per.run(per.name);
+</script>
+</html>
