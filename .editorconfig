@@ -1,0 +1,17 @@
+# https://editorconfig.org
+
+root = true
+
+### 通配符匹配所有
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+### 通配符匹配所有.md的文件
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false
