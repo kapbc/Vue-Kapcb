@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6字面量增强写法-函数简写</title>
+</head>
+<body>
+
+</body>
+<script>
+  /**
+   * ES5函数的写法
+   */
+  const obj = {
+    run: function (value) {
+      console.log('ES5函数的写法');
+      console.log(value);
+    },
+    eat: function (value) {
+      console.log('ES5函数的写法');
+      console.log(value);
+    },
+  }
+
+  obj.eat('Mike Chen在吃饭');
+  obj.run('Mike Chen在跑步');
+
+  /**
+   * ES6函数增强写法
+   */
+  const person = {
+    run(value){
+      console.log('ES6函数增强写法');
+      console.log(value);
+    },
+    eat(value){
+      console.log('ES6函数增强写法');
+      console.log(value);
+    },
+  }
+
+  person.run('Kapcb在吃饭');
+  person.eat('Kapcb在跑步');
+
+</script>
+</html>
