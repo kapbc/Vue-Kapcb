@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-on</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3>{{counter}}</h3>
+
+  <button v-on:click="counter++">添加</button>
+  <button v-on:click="counter--">减少</button>
+  <button v-on:click="_increase">increase</button>
+  <button v-on:click="_decrease">decrease</button>
+  <button @click="_increase">语法糖increase</button>
+  <button @click="_decrease">语法糖decrease</button>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      counter: 0,
+    },
+    methods: {
+      _increase() {
+        console.log('---------调用_increase方法---------');
+        if (this.counter >= 10) {
+          return;
+        }
+        this.counter++;
+      },
+      _decrease() {
+        console.log('---------调用_decrease方法---------');
+        if (this.counter <= 0) {
+          return;
+        }
+        this.counter--;
+      },
+    }
+  });
+</script>
+</html>
