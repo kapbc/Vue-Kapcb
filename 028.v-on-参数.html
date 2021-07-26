@@ -14,6 +14,8 @@
   <!--在事件定义时,写函数省略了小括号,但是方法本身是需要一个参数的,这个时候Vue会默认将浏览器
   产生的event事件对象作为参数传入到方法中-->
   <button @click="_addCount">添加1</button>
+  <!--定义方法时,需要event对象,同时也许需要其他参数-->
+  <!--在调用方法时,使用 $event 即可手动获取到浏览器的event事件对象-->
   <button @click="_addTen(10, $event)">添加10</button>
 </div>
 
@@ -32,13 +34,11 @@
         this.count++;
       },
       _addCount(event) {
-        console.log('调用addCount方法');
-        console.log(event);
+        console.log('调用addCount方法', event);
         this.count++;
       },
       _addTen(num, event) {
-        console.log('调用addTen方法');
-        console.log(event);
+        console.log('调用addTen方法', event);
         console.log(num);
         this.count += num;
       }

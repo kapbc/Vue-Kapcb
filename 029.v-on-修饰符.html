@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-on-修饰符</title>
+  <style>
+      .click-div {
+          height: 100px;
+          width: 100px;
+          background-color: orange;
+      }
+  </style>
+</head>
+<body>
+
+<div id="demo">
+  <div class="click-div" @click="_divClick">
+    <!--.stop阻止事件冒泡-->
+    <button @click.stop="_btnClick">按钮</button>
+  </div>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  /**
+   * 点击button,点击事件会被冒泡到div
+   */
+  let demo = new Vue({
+    el: '#demo',
+    data: {},
+    methods: {
+      _btnClick() {
+        console.log('点击按钮');
+      },
+      _divClick() {
+        console.log('点击div');
+      }
+    },
+  });
+
+</script>
+</html>
