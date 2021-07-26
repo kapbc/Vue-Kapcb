@@ -11,8 +11,10 @@
   <!--  <button v-on:click="_addCount">添加1</button>-->
   <!--  <button v-on:click="_addTen(10,$event)">添加10</button>-->
   <!--在事件定义时, 写函数省略了小括号, 但是方法本身是需要一个参数的-->
+  <!--在事件定义时,写函数省略了小括号,但是方法本身是需要一个参数的,这个时候Vue会默认将浏览器
+  产生的event事件对象作为参数传入到方法中-->
   <button @click="_addCount">添加1</button>
-  <button @click="_addTen(10,$event)">添加10</button>
+  <button @click="_addTen(10, $event)">添加10</button>
 </div>
 
 </body>
@@ -42,5 +44,14 @@
       }
     },
   });
+
+  /**
+   * 如果函数需要参数, 但是调用函数时没有传参, 那么函数的形参为undefined
+   */
+  function eat(food) {
+    console.log(food);
+  };
+
+  eat();
 </script>
 </html>
