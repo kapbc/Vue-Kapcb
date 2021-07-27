@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>条件判断</title>
+  <style>
+      h3 {
+          width: 1000px;
+          height: 30px;
+          font-size: 15px;
+      }
+  </style>
+</head>
+<body>
+
+<div id="demo">
+  <h3 v-if="score >= 90">优秀</h3>
+  <h3 v-else-if="score >= 80">良好</h3>
+  <h3 v-else-if="score >= 60">及格</h3>
+  <h3 v-else>挨打</h3>
+  <input type="text" placeholder="Pls enter score" v-model="input"></br>
+  <button type="button" @click="_confirm">Confirm</button>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      score: 0,
+      input: '',
+    },
+    methods: {
+      _confirm() {
+        console.log('点击确认');
+        this.score = this.input;
+      },
+    }
+  });
+</script>
+</html>
