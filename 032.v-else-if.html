@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-else-if</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3 v-if="isLogin">Login Success!</h3>
+  <h3 v-else>Pls Login!</h3>
+
+  <input type="text" v-model="username" placeholder="pls enter username"><br/>
+  <input type="password" v-model="password" placeholder="pls enter password"><br/>
+  <button @click="_login">login</button>
+  <button @click="_logout">logout</button>
+</div>
+
+</body>
+
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      username: '',
+      password: '',
+      loginCopy: 'Hello Kapcb, Login Success!',
+      loginFail: 'Please Login First',
+      isLogin: false,
+    },
+    methods: {
+      _logout() {
+        console.log('------------------logout------------------');
+        this.password = '';
+        this.username = '';
+        this.isLogin = false;
+      },
+      _login() {
+        console.log('------------------login------------------');
+        console.log('username : ' + this.username + ' password : ' + this.password);
+        console.log(typeof this.username);
+        console.log(typeof this.password);
+        console.log(this.username === 'kapcb' && this.password === '123456');
+        this.isLogin = this.username === 'kapcb' && this.password === '123456';
+      }
+    }
+  });
+</script>
+</html>
