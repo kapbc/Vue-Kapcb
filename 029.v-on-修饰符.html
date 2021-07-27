@@ -29,6 +29,9 @@
 
   <!--.监听键盘点击事件-->
   <input type="text" @keyup="_keyUp" placeholder="Please Enter Text"></br>
+
+  <!--.once修饰符的使用-->
+  <button @click.once="_btn">按钮2</button>
 </div>
 
 </body>
@@ -63,6 +66,14 @@
       },
       _keyUp() {
         console.log('点击了按钮');
+      },
+
+      /**
+       * .once只触发一次回调
+       * @private
+       */
+      _btn() {
+        console.log('once修饰符事件');
       }
     },
   });
