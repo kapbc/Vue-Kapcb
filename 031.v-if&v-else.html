@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-if&v-else</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3 v-if="isLogin">{{message}}</h3>
+  <h3 v-else="isLogin">{{copy}}</h3>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      message: 'Hello Kapcb',
+      copy: 'Sorry, Please Login First',
+      isLogin:false,
+    }
+  });
+</script>
+</html>
