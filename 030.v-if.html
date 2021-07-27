@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-if</title>
+</head>
+<body>
+
+<div id="demo">
+  <div v-if="showFlag">{{message}}</div>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      message: 'Hello Kapcb!',
+      showFlag: true,
+    }
+  });
+</script>
+</html>
