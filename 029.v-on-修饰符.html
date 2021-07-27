@@ -18,6 +18,17 @@
     <!--.stop阻止事件冒泡-->
     <button @click.stop="_btnClick">按钮</button>
   </div>
+
+  <!--.prevent阻止默认事件-->
+  <form action="kapcb">
+    <input type="text" placeholder="Please Enter Keyword"><br/>
+    <input type="password" placeholder="Please Enter Password"><br/>
+    <!--不希望点击按钮提交表单,而是手动进行提交-->
+    <input type="submit" value="Conform" @click.prevent="_confirmForm">
+  </form>
+
+  <!--.监听键盘点击事件-->
+  <input type="text" @keyup="_keyUp" placeholder="Please Enter Text"></br>
 </div>
 
 </body>
@@ -31,11 +42,27 @@
     el: '#demo',
     data: {},
     methods: {
+
+      /**
+       * .stop修饰符阻止事件冒泡
+       * @private
+       */
       _btnClick() {
         console.log('点击按钮');
       },
       _divClick() {
         console.log('点击div');
+      },
+
+      /**
+       * .prevent阻止事件冒泡
+       * @private
+       */
+      _confirmForm() {
+        alert('提交表单成功');
+      },
+      _keyUp() {
+        console.log('点击了按钮');
       }
     },
   });
