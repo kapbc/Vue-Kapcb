@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+
+<div id="demo">
+  <h5 v-if="isLogin">{{successMessage}}</h5>
+  <h5 v-else>{{failMessage}}</h5>
+  <label>username : </label>
+  <input type="text" placeholder="please enter username" v-model="username"></br>
+  <label>password : </label>
+  <input type="password" placeholder="please enter password" v-model="password" @keyup="_keyUp"></br>
+
+  <button type="button" @click="_login">login</button>
+  <button type="button" @click="_reset">reset</button>
+</div>
+
+</body>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      username: '',
+      password: '',
+      isLogin: false,
+      successMessage: 'Login Success!',
+      failMessage: 'Please login first!',
+    },
+    methods: {
+      _login() {
+        if (this.username === 'kapcb' && this.password === '123456') {
+          this.isLogin = true;
+        } else {
+          this.failMessage = 'Invalid Username Or Password!';
+        }
+      },
+      _reset() {
+        this.username = '';
+        this.password = '';
+        // this.isLogin = false;
+      },
+      _keyUp() {
+        this.failMessage = 'Please login first!';
+      }
+    }
+  });
+
+
+</script>
+</body>
+</html>
