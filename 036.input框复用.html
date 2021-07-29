@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>input框复用</title>
+</head>
+<body>
+
+<div id="demo">
+  <div v-if="isUserNameLogin">
+    <label for="username">用户名称 : </label>
+    <!--vue在虚拟dom中复用的时候, 会检查key, 如果存在key相同的元素, 则会进行复用, 否则不会进行复用-->
+    <input type="text" id="username" placeholder="用户名称" key="username">
+  </div>
+  <div v-else>
+    <label for="email">用户邮箱 : </label>
+    <input type="text" id="email" placeholder="用户邮箱" key="email">
+  </div>
+  <button type="button" @click="isUserNameLogin = !isUserNameLogin">切换登陆方式</button>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      isUserNameLogin: true,
+    }
+  });
+</script>
+</html>
