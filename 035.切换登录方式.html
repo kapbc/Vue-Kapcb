@@ -9,12 +9,12 @@
 <div id="demo">
   <span v-if="isUsernameLogin">
 <!--在label标签中添加属性 for, 当鼠标点击label中的内容时, 鼠标光标会自动聚焦到input输入框中-->
-  <label for="username">username : </label>
-    <input type="text" id="username">
+  <label for="username">用户名称 : </label>
+    <input type="text" id="username" placeholder="用户名称">
   </span>
   <span v-else>
-    <label for="email">email : </label>
-    <input type="text" id="email">
+    <label for="email">用户邮箱 : </label>
+    <input type="text" id="email" placeholder="用户邮箱">
   </span>
   <button type="button" @click="_changeLoginType">切换登录类型</button>
 </div>
