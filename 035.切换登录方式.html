@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>切换登陆方式</title>
+</head>
+<body>
+
+<div id="demo">
+  <span v-if="isUsernameLogin">
+<!--在label标签中添加属性 for, 当鼠标点击label中的内容时, 鼠标光标会自动聚焦到input输入框中-->
+  <label for="username">username : </label>
+    <input type="text" id="username">
+  </span>
+  <span v-else>
+    <label for="email">email : </label>
+    <input type="text" id="email">
+  </span>
+  <button type="button" @click="_changeLoginType">切换登录类型</button>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      isUsernameLogin: true,
+    },
+    methods: {
+      _changeLoginType() {
+        this.isUsernameLogin = !this.isUsernameLogin;
+      }
+    },
+  });
+</script>
+</html>
