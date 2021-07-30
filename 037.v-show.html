@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-show</title>
+</head>
+<body>
+
+<div id="demo">
+  <span v-show="isShow">我叫王大锤!</span>
+  <button @click="isShow = !isShow">切换显示</button>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      isShow: true,
+    }
+  });
+</script>
+</html>
