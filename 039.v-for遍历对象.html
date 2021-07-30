@@ -16,6 +16,11 @@
   <ul>
     <li v-for="(value, key) in user">value is : {{value}}, key is : {{key}}</li>
   </ul>
+
+  <!--3.获取key和value还有index 形式: (value, key, index) in user-->
+  <ul>
+    <li v-for="(value, key, index) in user">value is : {{value}}, key is : {{key}}, index is : {{index}}</li>
+  </ul>
 </div>
 </body>
 <script src="js/vue.js"></script>
