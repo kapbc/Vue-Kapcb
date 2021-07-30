@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for遍历对象</title>
+</head>
+<body>
+
+<div id="demo">
+  <!--1.遍历对象的过程中,如果只是获取一个值,那么获取到的时value-->
+  <ul>
+    <li v-for="item in user">{{item}}</li>
+  </ul>
+
+  <!--2.获取key和value  (value, key) in user-->
+  <ul>
+    <li v-for="(value, key) in user">value is : {{value}}, key is : {{key}}</li>
+  </ul>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const kapcb = {
+    username: 'kapcb',
+    password: '123456',
+    age: 18,
+  }
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      user: kapcb,
+    }
+  });
+</script>
+</html>
