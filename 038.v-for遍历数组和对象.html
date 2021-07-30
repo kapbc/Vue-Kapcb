@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for遍历数组和对象</title>
+</head>
+<body>
+
+<div id="demo">
+  <ul>
+    <li v-for="item in movies">the element is : {{item}}</li>
+  </ul>
+  <ul>
+    <li v-for="(item,index) in movies">the element is : {{item}} index is : {{index}}</li>
+  </ul>
+</div>
+</body>
+
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      movies: ['钢铁侠1', '钢铁侠2', '钢铁侠3', '美国队长1', '美国队长2', '变形金刚'],
+    }
+  });
+</script>
+</html>
