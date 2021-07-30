@@ -7,7 +7,10 @@
 <body>
 
 <div id="demo">
-  <span v-show="isShow">我叫王大锤!</span>
+  <!--v-if: 当条件为false时, 包含v-if指令的元素根本不会存在dom中-->
+  <span v-if="isShow">我叫哈哈哈哈!</span></br>
+  <!--v-show: 当条件为false时, v-show只是给dom元素添加一个行内样式: display:none-->
+  <span v-show="isShow">我叫王大锤!</span></br>
   <button @click="isShow = !isShow">切换显示</button>
 </div>
 </body>
