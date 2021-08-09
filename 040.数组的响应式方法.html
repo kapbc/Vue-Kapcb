@@ -11,6 +11,13 @@
     <li v-for="(item,key,index) in letters" :key="key">{{item}}</li>
   </ul>
   <button @click="_push">push</button>
+  <button @click="_indexChange">index change</button>
+  <button @click="_pop">pop</button>
+  <button @click="_shift">shift</button>
+  <button @click="_unshift">unshift</button>
+  <button @click="_splice">splice</button>
+  <button @click="_sort">sort</button>
+  <button @click="_reverse">reverse</button>
 </div>
 </body>
 <script src="js/vue.js"></script>
@@ -22,9 +29,62 @@
       letters: ['a', 'b', 'c', 'd', 'e', 'f']
     },
     methods: {
-      // 1. 数组的push方法--响应式
+      // 1. 响应式--数组的push方法
+      // 从数组尾部添加一个元素
       _push() {
         this.letters.push('kapcb');
+      },
+
+      // 2. 非响应式--通过索引值修改数组中的元素
+      _indexChange() {
+        this.letters[0] = 'aaaaaa';
+        console.log(this.letters[0]);
+      },
+
+      // 3. 响应式--数组的pop方法
+      // pop从数组尾部弹出一个元素
+      _pop() {
+        // 返回值为弹出的元素
+        let s = this.letters.pop();
+        console.log(s);
+      },
+
+      // 4. 响应式--数组的shift方法
+      //  从数组头部弹出一个元素
+      _shift() {
+        // 返回值为弹出的元素
+        let s = this.letters.shift();
+        console.log(s);
+      },
+
+      // 5. 响应式--数组的unshift方法
+      // 从数组头部添加一个元素
+      _unshift() {
+        // 返回值为数组的大小
+        let number = this.letters.unshift('kapcb');
+        console.log(number);
+      },
+
+      // 5. 响应式--数组的splice方法
+      // 在数组中指定索引的位置添加元素
+      _splice() {
+        let strings = this.letters.splice(2, 0, 'kkk');
+        console.log(strings);
+      },
+
+      // 6. 响应式--数组的sort方法
+      _sort() {
+        // 返回值为字符串数组
+        let strings = this.letters.sort((a, b) => a + b);
+        console.log(strings);
+      },
+
+      // 7. 响应式--数组的reverse方法
+      // 将数组反转
+      _reverse() {
+        // 反转之后的数组
+        let strings = this.letters.reverse();
+        console.log(strings);
       }
     }
   })
