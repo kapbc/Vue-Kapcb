@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组的响应式方法</title>
+</head>
+<body>
+
+<div id="demo">
+  <ul>
+    <li v-for="(item,key,index) in letters" :key="key">{{item}}</li>
+  </ul>
+  <button @click="_push">push</button>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      letters: ['a', 'b', 'c', 'd', 'e', 'f']
+    },
+    methods: {
+      // 1. 数组的push方法--响应式
+      _push() {
+        this.letters.push('kapcb');
+      }
+    }
+  })
+</script>
+</html>
