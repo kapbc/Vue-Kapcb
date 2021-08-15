@@ -39,5 +39,9 @@ const shoppingCar = new Vue({
         }]
     };
   },
-  methods: {},
+  methods: {
+    _increaseCount(index) {
+      this.books[index].price += this.books[index].price;
+    }
+  },
 })

@@ -21,9 +21,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr v-for="item in books">
-      <td v-for="value in item">{{value}}</td>
-      <td>移除</td>
+    <tr v-for="(item ,index) in books">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.publishTime}}</td>
+      <td>￥{{item.price}}</td>
+      <td><button @click="_increaseCount(index)">+</button> {{item.count}} <button>-</button></td>
+      <td><button>移除</button></td>
     </tr>
     </tbody>
   </table>
