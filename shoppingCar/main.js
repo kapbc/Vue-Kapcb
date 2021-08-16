@@ -9,10 +9,6 @@ const shoppingCar = new Vue({
         publishTime: '2009-09',
         price: 88.50,
         count: 1,
-        /**
-         * 当数量减少为0时,禁用按钮点击,禁止交互
-         */
-        disabled: false,
       },
         {
           id: 2,
@@ -20,7 +16,6 @@ const shoppingCar = new Vue({
           publishTime: '2017-04',
           price: 120.00,
           count: 1,
-          disabled: false,
         },
         {
           id: 3,
@@ -28,7 +23,6 @@ const shoppingCar = new Vue({
           publishTime: '2018-07',
           price: 229.50,
           count: 1,
-          disabled: false,
         },
         {
           id: 4,
@@ -36,7 +30,6 @@ const shoppingCar = new Vue({
           publishTime: '2019-09',
           price: 136.00,
           count: 1,
-          disabled: false,
         },
         {
           id: 5,
@@ -44,7 +37,6 @@ const shoppingCar = new Vue({
           publishTime: '2016-03',
           price: 66.80,
           count: 1,
-          disabled: false,
         }]
     };
   },
@@ -55,9 +47,7 @@ const shoppingCar = new Vue({
     _decreaseCount(index) {
       if (this.books[index].count > 1) {
         this.books[index].count -= 1;
-        return;
       }
-      this.books[index].disabled = true;
     },
     _getFinalPrice(price) {
       <!--数字的 toFixed(需要保留的位数)-->
@@ -75,5 +65,13 @@ const shoppingCar = new Vue({
       return '￥' + price.toFixed(2);
     }
   },
-  watch: {}
+  computed: {
+    totalPrice() {
+      let totalPrice = 0;
+      this.books.forEach((value => {
+        totalPrice += value.price * value.count;
+      }));
+      return totalPrice;
+    }
+  }
 })
