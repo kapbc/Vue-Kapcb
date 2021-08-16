@@ -53,16 +53,18 @@ const shoppingCar = new Vue({
       this.books[index].count += 1;
     },
     _decreaseCount(index) {
-      if (this.books[index].count > 0) {
+      if (this.books[index].count > 1) {
         this.books[index].count -= 1;
         return;
       }
       this.books[index].disabled = true;
-    }
-    ,
+    },
     _getFinalPrice(price) {
       <!--数字的 toFixed(需要保留的位数)-->
       return '￥' + price.toFixed(2);
+    },
+    _remove(index) {
+      this.books.splice(index, 1);
     }
   },
   /**
