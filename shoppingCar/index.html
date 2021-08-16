@@ -21,16 +21,25 @@
     </tr>
     </thead>
     <tbody>
-    <tr v-for="(item ,index) in books">
+    <tr v-for="(item ,index) in books" :key="index">
       <td>{{item.id}}</td>
       <td>{{item.name}}</td>
       <td>{{item.publishTime}}</td>
-      <td>￥{{item.price}}</td>
-      <td><button @click="_increaseCount(index)">+</button> {{item.count}} <button>-</button></td>
-      <td><button>移除</button></td>
+      <!--数字的 toFixed(需要保留的位数)-->
+      <!--<td>{{_getFinalPrice(item.price)}}</td>-->
+      <td>{{item.price | showPrice}}</td>
+      <td>
+        <button @click="_increaseCount(index)">+</button>
+        {{item.count}}
+        <button @click="_decreaseCount(index)" :disabled="item.disabled">-</button>
+      </td>
+      <td>
+        <button @click="_decreaseCount(index)" >移除</button>
+      </td>
     </tr>
     </tbody>
   </table>
+  <h2>总价格:</h2>
 </div>
 <script src="main.js"></script>
 </body>
