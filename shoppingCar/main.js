@@ -72,6 +72,35 @@ const shoppingCar = new Vue({
         totalPrice += value.price * value.count;
       }));
       return totalPrice;
+    },
+    totalPriceForIn: function () {
+      let totalPrice = 0;
+      for (const index in this.books) {
+        totalPrice += this.books[index].price * this.books[index].count;
+      }
+      return totalPrice;
+    },
+    totalPriceForReduce() {
+      return this.books.map((value) => {
+        return value.price * value.count
+      }).reduce((previousValue, currentValue) => {
+        return previousValue + currentValue;
+      })
     }
-  }
-})
+  },
+});
+
+/**
+ * 函数式编程
+ * filter中的回调函数有一个要求: 必须返回一个布尔值
+ * true: 当返回值为true时, 函数内部会自动将这次回调的参数加入到新的数组中
+ * false: 当返回值为false时, 函数内部会过滤掉当前元素
+ */
+const array = [10, 20, 30, 40, 100, 200, 300, 400, 70, 80, 30];
+let number = array.filter((value) => {
+  return value >= 100;
+}).reduce(((previousValue, currentValue) => {
+  console.log('previous value is : ' + previousValue + ' current value is : ' + currentValue);
+  return previousValue + currentValue;
+}));
+console.log(number);
