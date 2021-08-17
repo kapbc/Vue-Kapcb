@@ -86,6 +86,11 @@ const shoppingCar = new Vue({
       }).reduce((previousValue, currentValue) => {
         return previousValue + currentValue;
       })
+    },
+    totalPriceForReduceTwo() {
+      return this.books.reduce(((previousValue, currentValue) => {
+        return previousValue + currentValue.price * currentValue.count;
+      }), 0);
     }
   },
 });
@@ -104,3 +109,13 @@ let number = array.filter((value) => {
   return previousValue + currentValue;
 }));
 console.log(number);
+
+/**
+ * 会遍历 array.length次
+ * 第一次 previousValue : 0 , currentValue : 10
+ * 第二次 previousValue : 就是第一次函数调用时的返回值 , currentValue : 20
+ */
+array.reduce((previousValue, currentValue) => {
+  console.log('previousValue is : ' + previousValue + ' currentValue is : ' + currentValue);
+  return previousValue;
+}, 0);
