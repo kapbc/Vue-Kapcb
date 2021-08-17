@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-model</title>
+</head>
+<body>
+
+<div id="demo">
+  <input type="text" v-model="email" placeholder="input your email!">
+  <p>{{email}}</p><br/>
+  <input type="password" v-model="password" placeholder="input your password">
+  <p>{{password}}</p>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#demo',
+    data() {
+      return {
+        email: '',
+        password: ''
+      }
+    },
+
+  })
+
+</script>
+</html>
