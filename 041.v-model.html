@@ -11,6 +11,9 @@
   <p>{{email}}</p><br/>
   <input type="password" v-model="password" placeholder="input your password">
   <p>{{password}}</p>
+  <!--不使用v-model实现双向绑定-->
+  <input type="text" :value="message" v-on:input="_input">
+  <p>{{message}}</p>
 </div>
 
 </body>
@@ -21,10 +24,21 @@
     data() {
       return {
         email: '',
-        password: ''
+        password: '',
+        message: '1111'
       }
     },
-
+    methods: {
+      /**
+       * 浏览器页面产生交互就会生成一个事件, 默认会自动传递到函数的参数列表中
+       * event.target.value就是当前输入框中最新的值
+       * @param event
+       * @private
+       */
+      _input(event) {
+        this.message = event.target.value;
+      }
+    }
   })
 
 </script>
