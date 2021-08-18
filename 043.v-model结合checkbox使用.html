@@ -6,5 +6,23 @@
 </head>
 <body>
 
+<!--复选框分为两种情况: 单个勾选框和多个勾选框-->
+<div id="demo">
+  <label for="singleChoose">
+    <input type="checkbox" id="singleChoose" v-model="choose">同意协议
+  </label>
+  <p>{{choose}}</p>
+</div>
 </body>
+<script src="js/vue.js"></script>
+<script>
+  const demo = new Vue({
+    el: '#demo',
+    data() {
+      return {
+        choose: false
+      }
+    }
+  });
+</script>
 </html>
