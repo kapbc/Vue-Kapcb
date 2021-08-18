@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-model结合radio使用</title>
+</head>
+<body>
+
+<div id="demo">
+  <label for="man">
+    <!--给单选框添加name属性, 能够让单选框只能选中一个-->
+    <input type="radio" id="man" value="男" v-model="sex" name="sex">男
+  </label>
+  <label for="woman">
+    <input type="radio" id="woman" value="女" v-model="sex" name="sex">女
+  </label>
+  <p>您选择的性别是 : {{sex}}</p>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  const demo = new Vue({
+    el: '#demo',
+    data() {
+      return {
+        sex: '',
+      }
+    },
+  });
+</script>
+</html>
