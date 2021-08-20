@@ -8,19 +8,38 @@
 
 <!--复选框分为两种情况: 单个勾选框和多个勾选框-->
 <div id="demo">
+  <!--checkbox单选框-->
   <label for="singleChoose">
     <input type="checkbox" id="singleChoose" v-model="choose">同意协议
   </label>
+  <button :disabled="!choose">下一步</button>
   <p>{{choose}}</p>
+
+  <!--checkbox多选框-->
+  <input type="checkbox" value="all">全选<br>
+  <input type="checkbox" value="篮球" v-model="hobbits">篮球<br>
+  <input type="checkbox" value="足球" v-model="hobbits">足球<br>
+  <input type="checkbox" value="羽毛球" v-model="hobbits">羽毛球<br>
+  <input type="checkbox" value="乒乓球" v-model="hobbits">乒乓球<br>
+  <input type="checkbox" value="网球" v-model="hobbits">网球<br>
+  <p>{{hobbits | chooseHobbits}}</p>
 </div>
 </body>
 <script src="js/vue.js"></script>
 <script>
+  /**
+   * 在Vue实例初始化之前定义过滤器
+   */
+  Vue.filter('chooseHobbits', function (hobbits) {
+    return '您选择的爱好是 : ' + hobbits;
+  });
+
   const demo = new Vue({
     el: '#demo',
     data() {
       return {
-        choose: false
+        choose: false,
+        hobbits: []
       }
     }
   });
