@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件化开发</title>
+</head>
+<body>
+
+<div id="demo">
+  <!--3.使用注册的组件-->
+  <kapcb-component>
+  </kapcb-component>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const kapcbComponent = Vue.extend({
+    template: `<div>
+        <h2>vue.js组件化开发</h2>
+        <p>Kapcb Awesome Man!</p>
+        </div>`
+  });
+
+  /**
+   * 2.注册主键, 并定义组件标签的名称
+   */
+  Vue.component('kapcb-component', kapcbComponent);
+
+  const demo = new Vue({
+    el: '#demo',
+    data() {
+      return {
+        message: 'Kapcb Awesome Man!',
+      }
+    }
+  })
+</script>
+</html>
