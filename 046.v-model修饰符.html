@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-model修饰符</title>
+</head>
+<body>
+<div id="demo">
+  <!--1.修饰符lazy-->
+  <label for="lazy">
+    <input type="text" id="lazy" v-model.lazy="username">
+    <p>{{username | lazyMessage}}</p>
+  </label><br>
+
+  <label for="number">
+    <input type="number" id="number" v-model.number="age">
+    <p>{{age | numberMessage}}</p>
+  </label><br>
+
+  <label for="trim">
+    <input type="text" id="trim" v-model.lazy.trim="password">
+    <p>{{password | trimMessage}}</p>
+  </label><br>
+
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  Vue.filter('lazyMessage', function (username) {
+    return '您输入的内容是 : ' + username;
+  });
+
+  Vue.filter('trimMessage', function (password) {
+    return '您输入的密码是 : ' + password;
+  });
+
+  Vue.filter('numberMessage', function (age) {
+    return '您输入的年龄是 : ' + age + ' 类型是 : ' + (typeof age);
+  });
+
+  const demo = new Vue({
+    el: '#demo',
+    data() {
+      return {
+        username: '',
+        password: '',
+        age: 0
+      }
+    }
+  });
+</script>
+</html>
