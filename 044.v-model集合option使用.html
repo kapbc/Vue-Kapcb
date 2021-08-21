@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-model集合option使用</title>
+</head>
+<body>
+
+<div id="demo">
+  <!--1.选择一个-->
+  <select name="aaa" v-model="fruit">
+    <option value="苹果">苹果</option>
+    <option value="香蕉">香蕉</option>
+    <option value="梨子">梨子</option>
+    <option value="火龙果">火龙果</option>
+    <option value="榴莲">榴莲</option>
+  </select>
+  <p>{{fruit | selectOption}}</p>
+
+  <!--选择多个-->
+  <select name="bbb" v-model="hobbits" multiple>
+    <option value="骑车">骑车</option>
+    <option value="跑步">跑步</option>
+    <option value="健身">健身</option>
+    <option value="游泳">游泳</option>
+    <option value="篮球">篮球</option>
+  </select>
+  <p>{{hobbits | multiSelect}}</p>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  const demo = new Vue({
+    el: '#demo',
+    data() {
+      return {
+        fruit: '梨子',
+        hobbits: []
+      }
+    },
+    filters: {
+      selectOption(name) {
+        return '您选择的水果是 : ' + name;
+      },
+      multiSelect(name) {
+        return '您选择的爱好是 : ' + name;
+      }
+    }
+  });
+</script>
+</html>
