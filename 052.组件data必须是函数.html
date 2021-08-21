@@ -33,8 +33,6 @@
     }
   };
 
-  componentOne.data().componentMessage = 'Change Component Message!';
-
   /**
    * 组件是不可以访问Vue实例中的数据的
    * 组件是一个单独功能模块的封装, 这个模块有属于自己的HTML模板, 也应该有属于自己的data数据
@@ -47,7 +45,7 @@
       };
     },
     components: {
-      componentOne: componentOne
+      componentOne
     },
   });
 </script>

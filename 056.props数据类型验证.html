@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>props数据类型验证</title>
+</head>
+<body>
+<div id="demo">
+  <h2>这是父组件</h2>
+  <hr>
+  <son-component :author="info" :age="number" :back-result="result" :awesome="flag" :movies="array"></son-component>
+</div>
+<template id="sonComponent">
+  <div>
+    <h3>这是子组件</h3>
+    <p>用户信息 : {{author}}</p>
+    <p>年龄 : {{age}}</p>
+    <p>结果 : {{backResult}}</p>
+    <p>flag : {{awesome}}</p>
+    <ul>
+      <li v-for="(item, index) in movies" :key="index">{{item}}</li>
+    </ul>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const sonComponent = {
+    template: '#sonComponent',
+    data() {
+      return {}
+    },
+    props: {
+      author: {
+        type: Object,
+        required: true,
+        /**
+         * 对象或数组默认值必须要从一个共产函数获取
+         */
+        default: Person('Kapcb', 'Chen'),
+        // 或者如下写法
+        // default: function (firstName, lastName) {
+        //   return {
+        //     firstName,
+        //     lastName
+        //   }
+        // }
+      },
+      age: {
+        type: Number,
+        /**
+         * 必须的值
+         */
+        required: true,
+        default: 0
+      },
+      awesome: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      /**
+       * 自定义校验
+       */
+      backResult: {
+        type: String,
+        required: true,
+        validator(value) {
+          /**
+           * 这个值必须匹配下列数组中的一项
+           */
+          return ['success', 'fail', 'warning'].indexOf(value) != -1;
+        }
+      },
+      movies: {
+        type: Array,
+        required: false
+      }
+    }
+  }
+
+  function Person(firstName, lastName) {
+    return {
+      firstName,
+      lastName
+    }
+  };
+
+  const demo = new Vue({
+    el: '#demo',
+    data: {
+      number: 0,
+      string: 'Kapcb',
+      flag: false,
+      result: 'success',
+      info: Person('Mike', 'Chen'),
+      array: ['钢铁侠', '蜘蛛侠', '美国队长']
+    },
+    components: {
+      sonComponent
+    }
+  })
+</script>
+</html>

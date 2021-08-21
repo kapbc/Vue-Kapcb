@@ -8,11 +8,17 @@
 <div id="demo">
   <h2>这是父组件</h2>
   <hr>
-  <component-son></component-son>
+  <!--父组件传递数据给子组件必须使用v-bind进行绑定, 否则只会传递value字符串-->
+  <component-son :son="movies" :cmessage="message"></component-son>
 </div>
 <template id="componentSon">
   <div>
     <h2>这是子组件</h2>
+    <h3>消息 : {{cmessage}}</h3>
+    电影为 :
+    <ul>
+      <li v-for="item in son" :key="item">{{item}}</li>
+    </ul>
   </div>
 </template>
 </body>
@@ -23,16 +29,44 @@
     template: '#componentSon',
     data() {
       return {};
+    },
+    /**
+     * 数组写法
+     */
+    // props: ['son', 'cmessage']
+
+    /**
+     * 对象写法
+     */
+    props: {
+      /**
+       * 可以指定数据的类型
+       */
+      // son: Array,
+      // cmessage: String
+
+      /**
+       * 可以设置默认值
+       */
+      son: {
+        type: Array,
+        default: []
+      },
+      cmessage: {
+        type: String,
+        default: ''
+      }
     }
   }
 
   new Vue({
     el: '#demo',
-    data() {
-      return {}
+    data: {
+      message: 'Kapcb Awesome Man!',
+      movies: ['海贼王', '名侦探柯南', '火影忍者', '海尔兄弟', '死神'],
     },
     components: {
-      componentSon: componentSon
+      componentSon
     }
   })
 </script>
