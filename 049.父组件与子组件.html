@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父组件与子组件</title>
+</head>
+<body>
+<div id="demo">
+  <parent-component></parent-component>
+  <son-component></son-component>
+  <super-component></super-component>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const parent = {
+    template: `<div>
+                <h2>这是父组件</h2>
+              </div>`
+  };
+
+  const son = {
+    template: `<div>
+                <h2>这是子组件</h2>
+              </div>`
+  };
+
+  /**
+   * 声明子组件构造器
+   * @type {{template: string}}
+   */
+  const superSon = Vue.extend({
+    template: `
+      <div>
+      <h2>这是超级子组件</h2>
+      </div>`
+  })
+
+  /**
+   * 声明父组件构造器
+   * @type {{template: string}}
+   */
+  const superComponent = Vue.extend({
+    template: `
+      <div>
+      <h2>这是超级父组件</h2>
+      <super-son></super-son>
+      </div>`,
+    components: {
+      'super-son': superSon,
+    }
+  });
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      /**
+       * 属性使用驼峰命名, 在HTML元素中需要使用 - 来转义驼峰
+       */
+      parentComponent: parent,
+      sonComponent: son,
+      superComponent: superComponent
+    },
+  });
+</script>
+</html>
