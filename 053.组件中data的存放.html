@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件中data的存放</title>
+</head>
+<body>
+<div id="demo">
+  <!--第一个组件中的数据改变不会影响到第二个组件中的数据-->
+  <component-kapcb></component-kapcb>
+  <hr>
+  <component-kapcb></component-kapcb>
+</div>
+<template id="componentKpacb">
+  <div>
+    <h3>这是组件!</h3>
+    <h3>当前计数 : {{count}}</h3>
+    <button @click="count++">增加</button>
+    <button @click="count--" :disabled="count <= 0">减少</button>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  /**
+   * 注册全局组件
+   */
+  Vue.component('componentKapcb', {
+    template: '#componentKpacb',
+    /**
+     * 每次使用这个组件的时候, 由于data()是一个函数
+     * 所以每次调用都会返回一个新的数据对象
+     * 所以在组件的复用上, 每个组件的数据都是单独隔离开的,
+     * A页引用了这个组件, B页面也引用了同一个组件, 当组件数据
+     * 发生变化的时候, 各自的数据都是互相隔离的。
+     * 相当于每次引用都会return一个new 出来的对象, 每个被引用的组件
+     * 的data对象都指向属于自己的内存地址
+     * @returns {{count: number}}
+     */
+    data() {
+      return {
+        count: 0,
+      };
+    },
+  });
+
+  const demo = new Vue({
+    el: '#demo',
+  })
+</script>
+</html>
