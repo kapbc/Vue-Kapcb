@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父子组件的通讯</title>
+</head>
+<body>
+<div id="demo">
+  <component-one></component-one>
+</div>
+<template id="componentOne">
+  <div>
+    <h3>父组件</h3>
+    <h3>{{parentMessage}}</h3>
+    <hr>
+    <component-two></component-two>
+  </div>
+</template>
+<template id="componentTwo">
+  <div>
+    <h3>子组件</h3>
+    <h3>{{sonMessage}}</h3>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  /**
+   * 子组件
+   * 子组件必须在父组件之前进行声明, 否则会报错
+   * @type {{template: string, data(): {sonMessage: string}}}
+   */
+  const componentTwo = {
+    template: '#componentTwo',
+    data() {
+      return {
+        sonMessage: 'Hi This is son!'
+      }
+    }
+  };
+
+  /**
+   * 父组件
+   * @type {{template: string, components: {componentTwo: {template: string, data, (): {sonMessage: string}}}, data(): {parentMessage: string}}}
+   */
+  const componentOne = {
+    template: '#componentOne',
+    data() {
+      return {
+        parentMessage: 'Hi! This is parent!'
+      }
+    },
+    components: {
+      componentTwo: componentTwo
+    }
+  };
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      componentOne: componentOne,
+    }
+  })
+</script>
+</html>
