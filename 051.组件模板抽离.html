@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件模板抽离</title>
+</head>
+<body>
+<div id="demo">
+  <component-one></component-one>
+  <component-two></component-two>
+</div>
+</body>
+<!--将组件模板抽离到script标签中, 类型必须为text/x-template, 通过id进行绑定-->
+<script type="text/x-template" id="componentOne">
+  <div>
+    <h3>全局组件模板抽离写法</h3>
+  </div>
+</script>
+<!--将组件模板抽离到script标签中, 类型必须为text/x-template, 通过id进行绑定-->
+<script type="text/x-template" id="componentTwo">
+  <div>
+    <h3>局部组件模板分离写法</h3>
+  </div>
+</script>
+<script src="js/vue.js"></script>
+<script>
+
+  /**
+   * 全局组件模板分离
+   */
+  Vue.component('component-one', {
+    template: '#componentOne'
+  })
+
+  const componentTwo = {
+    template: '#componentTwo'
+  }
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      'component-two': componentTwo,
+    }
+  })
+</script>
+</html>
