@@ -25,8 +25,10 @@
 
   let demo = new Vue({
     el: '#demo',
-    data: {
-      letters: ['a', 'b', 'c', 'd', 'e', 'f']
+    data() {
+      return {
+        letters: ['a', 'b', 'c', 'd', 'e', 'f']
+      }
     },
     methods: {
       // 1. 响应式--数组的push方法
