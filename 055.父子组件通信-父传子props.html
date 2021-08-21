@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父子组件通信-父传子props</title>
+</head>
+<body>
+<div id="demo">
+  <h2>这是父组件</h2>
+  <hr>
+  <component-son></component-son>
+</div>
+<template id="componentSon">
+  <div>
+    <h2>这是子组件</h2>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const componentSon = {
+    template: '#componentSon',
+    data() {
+      return {};
+    }
+  }
+
+  new Vue({
+    el: '#demo',
+    data() {
+      return {}
+    },
+    components: {
+      componentSon: componentSon
+    }
+  })
+</script>
+</html>
