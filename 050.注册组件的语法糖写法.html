@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>注册组件的语法糖写法</title>
+</head>
+<body>
+
+<div id="demo">
+  <cpn></cpn>
+  <local-cpn></local-cpn>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  /**
+   * 注册全局组件语法糖写法
+   */
+  Vue.component('cpn', {
+    template: `<div>
+                <h3>注册全局组件语法糖写法</h3>
+               </div>`
+  });
+
+  const demo = new Vue({
+    el: '#demo',
+    /**
+     * 注册局部组件语法糖写法
+     */
+    components: {
+      'localCpn': {
+        template: `<div>
+                <h3>注册局部组件语法糖写法</h3>
+               </div>`
+      },
+    },
+  })
+</script>
+</html>

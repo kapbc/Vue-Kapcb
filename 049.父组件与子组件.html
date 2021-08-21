@@ -47,6 +47,11 @@
       <h2>这是超级父组件</h2>
       <super-son></super-son>
       </div>`,
+    /**
+     * 在这里注册的组只能够在 superComponent中使用
+     * 如果希望在别的地方也能够使用到superSon组件, 则需要在Vue
+     * 实例挂载中的components属性中注册
+     */
     components: {
       'super-son': superSon,
     }
