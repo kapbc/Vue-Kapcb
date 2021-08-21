@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件data必须是函数</title>
+</head>
+<body>
+<div id="demo">
+  <h3>{{message}}</h3>
+  <hr>
+  Component:
+  <component-one></component-one>
+</div>
+</body>
+<script type="text/x-template" id="componentOne">
+  <div>
+    <h3>{{componentMessage}}</h3>
+  </div>
+</script>
+<script src="js/vue.js"></script>
+<script>
+
+  const componentOne = {
+    template: '#componentOne',
+    /**
+     * 组件的data必须为函数, 不能为对象属性
+     * @returns {{}}
+     */
+    data() {
+      return {
+        componentMessage: 'Hello! This is component message',
+      };
+    }
+  };
+
+  componentOne.data().componentMessage = 'Change Component Message!';
+
+  /**
+   * 组件是不可以访问Vue实例中的数据的
+   * 组件是一个单独功能模块的封装, 这个模块有属于自己的HTML模板, 也应该有属于自己的data数据
+   */
+  const demo = new Vue({
+    el: '#demo',
+    data() {
+      return {
+        message: 'Kapcb Awesome Man!'
+      };
+    },
+    components: {
+      componentOne: componentOne
+    },
+  });
+</script>
+</html>
