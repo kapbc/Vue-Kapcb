@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>input中的值绑定</title>
+</head>
+<body>
+
+<div id="demo">
+  <label :for="item" v-for="(item, index) in originalHobbies" :key="index">
+    <input type="checkbox" :value="item" :id="item" v-model="hobbies">{{item}}<br>
+  </label>
+  <p>{{hobbies | showMessage}}</p>
+</div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+  Vue.filter('showMessage', function (hobbits) {
+    return '您选中的爱好是 : ' + hobbits;
+  });
+
+  const demo = new Vue({
+    el: '#demo',
+    data() {
+      return {
+        hobbies: [],
+        originalHobbies: ['篮球', '足球', '网球', '乒乓球', '羽毛球']
+      }
+    },
+  });
+</script>
+</html>
