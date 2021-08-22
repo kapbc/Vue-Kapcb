@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父子组件的通信-子传父</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3>这是父组件</h3>
+  <hr>
+  <!--父组件通过 v-on:事件名称="父组件处理该事件的方法" 来监听子组件传递的参数-->
+  <!--<component-son v-on:category-click="categoryComponentClick"></component-son>-->
+  <component-son @category-click="categoryComponentClick"></component-son>
+</div>
+
+<template id="componentSon">
+  <div>
+    <h3>这是子组件</h3>
+    <button v-for="(item, index) in categories" :key="index" @click="clickCategory(item.categoryId)">
+      {{item.categoryName}}
+    </button>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const componentSon = {
+    template: '#componentSon',
+    data() {
+      return {
+        categories: [
+          {categoryId: 100001, categoryName: '热门推荐'},
+          {categoryId: 100002, categoryName: '手机数码'},
+          {categoryId: 100003, categoryName: '生活用品'},
+          {categoryId: 100004, categoryName: '服装搭配'},
+          {categoryId: 100005, categoryName: '零食小吃'},
+          {categoryId: 100006, categoryName: '儿童玩具'},
+          {categoryId: 100007, categoryName: '汽车配件'},
+          {categoryId: 100008, categoryName: '旅行装备'},
+        ]
+      }
+    },
+    methods: {
+      clickCategory(categoryId) {
+        console.log('子组件发送的数据 : ' + categoryId);
+        /**
+         * 发送事件
+         * 第一个参数: 事件的名称
+         * 第二个参数: 传递的参数
+         */
+        this.$emit('category-click', categoryId)
+      }
+    }
+  }
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      componentSon,
+    },
+    methods: {
+      /**
+       * 处理监听到的子组件事件的方法
+       * @param categoryId 接收子组件传递过来的参数
+       */
+      categoryComponentClick(categoryId) {
+        console.log('父组件接收到的数据 : ' + categoryId);
+      }
+    }
+  })
+</script>
+</html>
