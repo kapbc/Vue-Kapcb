@@ -7,15 +7,20 @@
 <body>
 <div id="demo">
   <h3>这是父组件</h3>
+  <h5>{{num1}}</h5>
+  <h5>{{num2}}</h5>
   <hr>
-  <cpn :num1="num1" :num2="num2"/>
+  <cpn :num1="num1" :num2="num2" @input-one="handlerInput"/>
 </div>
 <template id="cpn">
   <div>
     <h3>子组件</h3>
-    <h5>{{num1}}</h5>
-    <h5>{{num2}}</h5>
-    <input type="text" v-model.number="num1">
+    <h5>props:{{num1}}</h5>
+    <h5>props:{{num2}}</h5>
+    <h5>data:{{inputNumber1}}</h5>
+    <h5>data:{{inputNumber2}}</h5>
+    <input type="text" :value.number="inputNumber1" @input="inputNumber1Lisenter"><br>
+    <input type="text" :value="inputNumber2">
   </div>
 </template>
 </body>
@@ -24,7 +29,10 @@
   const cpn = {
     template: '#cpn',
     data() {
-      return {}
+      return {
+        inputNumber1: this.num1,
+        inputNumber2: this.num2
+      }
     },
     props: {
       num1: {
@@ -37,6 +45,14 @@
         required: false,
         default: 0
       }
+    },
+    methods: {
+      inputNumber1Lisenter(event) {
+        const value = event.target.value;
+        console.log('value is : ' + value);
+        // this.inputNumber1 = value;
+        this.$emit('input-one', value);
+      }
     }
   };
 
@@ -46,7 +62,14 @@
       num1: 1,
       num2: 0
     },
-    methods: {},
+    methods: {
+      handlerInput(number) {
+        console.log('----------------');
+        console.log(number);
+        console.log(typeof number);
+        this.num1 = number;
+      }
+    },
     components: {
       cpn
     }
