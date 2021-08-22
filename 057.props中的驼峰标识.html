@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>props中的驼峰标识</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3>这是父组件</h3>
+  <hr>
+  <!--组件注册如果是驼峰命名, 则需要使用 - 来转义驼峰-->
+  <component-son :son-message="message" :person-info="personInfo"></component-son>
+</div>
+<!--vue规定: 在子组件中 如果包含多个同级的标签,必须要有一个根标签包裹所有的标签-->
+<template id="templateOne">
+  <div>
+    <h3>这是子组件</h3>
+    <h4>{{sonMessage}}</h4>
+    <ul>
+      <li v-for="item in sonMovies">{{item}}</li>
+    </ul>
+    <p>Your Name Is : {{personInfo.firstName + ' - ' + this.personInfo.lastName}}</p>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const componentSon = {
+    template: '#templateOne',
+    props: {
+      /**
+       * 由父组件传递过来的数据, 变量名是包含 - 的
+       * 则需要将 - 转译为驼峰进行数据接收
+       */
+      sonMessage: {
+        type: String,
+        required: true
+      },
+      sonMovies: {
+        type: Array,
+        default() {
+          return ['kapcb man!'];
+        }
+      },
+      personInfo: {
+        type: Object,
+        required: false,
+        default() {
+          return {
+            firstName: 'Mike',
+            lastName: 'Chen'
+          };
+        }
+      }
+    }
+  }
+
+  const demo = new Vue({
+    el: '#demo',
+    data: {
+      message: 'Kapcb Awesome Man!',
+      movies: ['钢铁侠', '蜘蛛侠', '闪电侠', '蝙蝠侠', '绿灯侠'],
+      personInfo: {
+        firstName: 'Kapcb',
+        lastName: 'Chen'
+      }
+    },
+    components: {
+      componentSon,
+    }
+  })
+</script>
+</html>
