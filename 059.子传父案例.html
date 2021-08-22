@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>子传父案例</title>
+</head>
+<body>
+<div id="demo">
+  <h3>这是父组件</h3>
+  <h3>父组件当前计数 : {{count}}</h3>
+  <hr>
+  <son-component @count-increase="countChange" @count-decrease="countChange"></son-component>
+</div>
+
+<template id="sonComponent">
+  <div>
+    <h3>这是子组件</h3>
+    <h3>子组件当前计数为 : {{count}}</h3>
+    <button @click="increase">增加</button>
+    <button @click="decrease" :disabled="count <= 0">减少</button>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const sonComponent = {
+    template: '#sonComponent',
+    data() {
+      return {
+        count: 0,
+      }
+    },
+    methods: {
+      increase() {
+        this.count++;
+        this.$emit('count-increase', this.count);
+      },
+      decrease() {
+        if (this.count > 0) {
+          this.count--;
+          this.$emit('count-decrease', this.count);
+        }
+      }
+    }
+  };
+
+  const demo = new Vue({
+    el: '#demo',
+    data: {
+      count: 0,
+    },
+    components: {
+      sonComponent
+    },
+    methods: {
+      countChange(count) {
+        this.count = count;
+      }
+    }
+  })
+</script>
+</html>
