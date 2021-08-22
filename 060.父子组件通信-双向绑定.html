@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父子组件绑定-双向绑定</title>
+</head>
+<body>
+<div id="demo">
+  <h3>这是父组件</h3>
+  <hr>
+  <cpn :num1="num1" :num2="num2"/>
+</div>
+<template id="cpn">
+  <div>
+    <h3>子组件</h3>
+    <h5>{{num1}}</h5>
+    <h5>{{num2}}</h5>
+    <input type="text" v-model.number="num1">
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  const cpn = {
+    template: '#cpn',
+    data() {
+      return {}
+    },
+    props: {
+      num1: {
+        type: Number,
+        required: false,
+        default: 0
+      },
+      num2: {
+        type: Number,
+        required: false,
+        default: 0
+      }
+    }
+  };
+
+  const vue = new Vue({
+    el: '#demo',
+    data: {
+      num1: 1,
+      num2: 0
+    },
+    methods: {},
+    components: {
+      cpn
+    }
+  });
+</script>
+</html>
