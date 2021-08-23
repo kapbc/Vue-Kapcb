@@ -10,7 +10,7 @@
   <h5>{{num1}}</h5>
   <h5>{{num2}}</h5>
   <hr>
-  <cpn :num1="num1" :num2="num2" @input-one="handlerInput"/>
+  <cpn :num1="num1" :num2="num2" @input-one="handlerInput1" @input-two="handlerInput2"/>
 </div>
 <template id="cpn">
   <div>
@@ -19,8 +19,8 @@
     <h5>props:{{num2}}</h5>
     <h5>data:{{inputNumber1}}</h5>
     <h5>data:{{inputNumber2}}</h5>
-    <input type="text" :value.number="inputNumber1" @input="inputNumber1Lisenter"><br>
-    <input type="text" :value="inputNumber2">
+    <input type="text" :value="inputNumber1" @input="inputNumber1Listener"><br>
+    <input type="text" :value="inputNumber2" @input="inputNumber2Listener">
   </div>
 </template>
 </body>
@@ -47,11 +47,16 @@
       }
     },
     methods: {
-      inputNumber1Lisenter(event) {
+      inputNumber1Listener(event) {
         const value = event.target.value;
         console.log('value is : ' + value);
-        // this.inputNumber1 = value;
+        this.inputNumber1 = value;
         this.$emit('input-one', value);
+      },
+      inputNumber2Listener(event) {
+        const value = event.target.value;
+        this.inputNumber2 = value;
+        this.$emit('input-two', value)
       }
     }
   };
@@ -63,11 +68,15 @@
       num2: 0
     },
     methods: {
-      handlerInput(number) {
-        console.log('----------------');
+      handlerInput1(number) {
         console.log(number);
         console.log(typeof number);
-        this.num1 = number;
+        this.num1 = number * 1;
+      },
+      handlerInput2(number) {
+        console.log(number);
+        console.log(typeof number);
+        this.num2 = parseInt(number);
       }
     },
     components: {
