@@ -6,11 +6,51 @@
 </head>
 <body>
 <div id="demo">
-
+  <h3>这是父组件</h3>
+  <button @click="btnClick">按钮</button>
+  <cpn/>
 </div>
+<template id="cpn">
+  <div>
+    <h3>这是子组件</h3>
+  </div>
+</template>
 </body>
 <script src="js/vue.js"></script>
 <script>
 
+  const cpn = {
+    template: '#cpn',
+    data() {
+      return {
+        name: '我是子组件中的name属性',
+      }
+    },
+    methods: {
+      showMessage() {
+        console.log('showMessage');
+      }
+    },
+  };
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      cpn,
+    },
+    methods: {
+      btnClick() {
+        console.log(this.$children);
+        /**
+         * 父组件调用子组件的方法
+         */
+        this.$children[0].showMessage();
+        /**
+         * 父组件调用子组件的属性
+         */
+        console.log(this.$children[0]._data.name);
+      },
+    },
+  })
 </script>
 </html>
