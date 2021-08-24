@@ -41,6 +41,11 @@
     data: {},
     methods: {
       btnClick() {
+        /**
+         * $refs 是一个Object类型, 默认是一个空对象, 必须要在
+         * 需要操作的子组件上添加 ref = "xx"属性
+         * 然后通过 this.$refs.xx. 获取需要操作的东西
+         */
         console.log(this.$refs);
         console.log(this.$refs.cpn3.name);
         this.$refs.cpn3.showMessage();
