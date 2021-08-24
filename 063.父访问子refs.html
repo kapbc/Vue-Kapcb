@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父访问子refs</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3>这是父组件</h3>
+  <cpn ref="cpn1"></cpn>
+  <cpn ref="cpn2"></cpn>
+  <cpn ref="cpn3"></cpn>
+  <button @click="btnClick">按钮</button>
+</div>
+<template id="cpn">
+  <div>
+    <h3>这是子组件</h3>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const cpn = {
+    template: '#cpn',
+    data() {
+      return {
+        name: '子组件中的name属性'
+      }
+    },
+    methods: {
+      showMessage() {
+        console.log('子组件中的showMessage方法');
+      },
+    },
+  }
+
+  const demo = new Vue({
+    el: '#demo',
+    data: {},
+    methods: {
+      btnClick() {
+        console.log(this.$refs);
+        console.log(this.$refs.cpn3.name);
+        this.$refs.cpn3.showMessage();
+      }
+    },
+    components: {
+      cpn,
+    }
+  });
+
+</script>
+</html>
