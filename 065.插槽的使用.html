@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>插槽的使用</title>
+</head>
+<body>
+<div id="demo">
+  <cpn><button>按钮</button></cpn>
+  <cpn><span>插槽替换</span></cpn>
+  <cpn><b>插槽</b></cpn>
+  <cpn><strong>插槽</strong></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <h3>组件cpn</h3>
+    <slot></slot>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const cpn = {
+    template: '#cpn',
+  }
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      cpn,
+    }
+  })
+
+</script>
+</html>
