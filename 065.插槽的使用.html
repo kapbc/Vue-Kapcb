@@ -11,13 +11,18 @@
   </cpn>
   <cpn><span>插槽替换</span></cpn>
   <cpn><b>插槽</b></cpn>
-  <cpn><strong>插槽</strong></cpn>
+  <!--如果有多个元素时, 会直接替换到插槽中-->
+  <cpn>
+    <i>插槽</i>
+    <p>插槽</p>
+    <div>插槽</div>
+  </cpn>
 </div>
 <template id="cpn">
   <div>
     <h3>组件cpn</h3>
     <!--可以给插槽指定默认值, 如果使用组件的时候没有传, 则默认使用这里的-->
-    <slot></slot>
+    <slot><button>按钮</button></slot>
   </div>
 </template>
 </body>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>具名插槽的使用</title>
+</head>
+<body>
+<div id="demo">
+
+  <cpn>
+    <!--根据插槽的名称替换指定的插槽-->
+    <!--使用 :slot 动态绑定插槽-->
+    <button :slot="leftSlot">按钮</button>
+    <em slot="center">搜索框</em>
+    <button slot="right">返回</button>
+  </cpn>
+  <button @click="btnClick">切换插槽</button>
+</div>
+
+<template id="cpn">
+  <div>
+    <h3>这是子组件</h3>
+    <!--使用 name 属性指定插槽的名称-->
+    <slot name="left"><span>左边</span></slot>
+    <slot name="center"><span>中间</span></slot>
+    <slot name="right"><span>右边</span></slot>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const cpn = {
+    template: '#cpn'
+  };
+
+  const demo = new Vue({
+    el: '#demo',
+    data: {
+      leftSlot: ''
+    },
+    methods: {
+      btnClick() {
+        this.leftSlot = 'left';
+      }
+    },
+    components: {
+      cpn
+    }
+  })
+
+</script>
+</html>
