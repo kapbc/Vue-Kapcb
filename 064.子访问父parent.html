@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>子访问父parent</title>
+</head>
+<body>
+<div id="demo">
+  <h3>这是父组件</h3>
+  <hr>
+  <cpn></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <h3>这是子组件</h3>
+    <button @click="">按钮</button>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const cpn = {
+    template: '#cpn',
+    data() {
+      return {}
+    },
+    methods: {}
+  };
+
+  const demo = new Vue({
+    el: '#demo',
+    data: {
+      message: '这是父组件中的消息'
+    },
+    components: {
+      cpn
+    },
+    methods: {
+      showMessage() {
+        console.log('这是父组件的showMessage方法');
+      }
+    }
+  })
+</script>
+</html>
