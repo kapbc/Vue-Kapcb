@@ -6,7 +6,9 @@
 </head>
 <body>
 <div id="demo">
-  <cpn><button>按钮</button></cpn>
+  <cpn>
+    <button>按钮</button>
+  </cpn>
   <cpn><span>插槽替换</span></cpn>
   <cpn><b>插槽</b></cpn>
   <cpn><strong>插槽</strong></cpn>
@@ -14,6 +16,7 @@
 <template id="cpn">
   <div>
     <h3>组件cpn</h3>
+    <!--可以给插槽指定默认值, 如果使用组件的时候没有传, 则默认使用这里的-->
     <slot></slot>
   </div>
 </template>
