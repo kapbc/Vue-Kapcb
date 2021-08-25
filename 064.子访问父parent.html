@@ -10,10 +10,20 @@
   <hr>
   <cpn></cpn>
 </div>
+
 <template id="cpn">
   <div>
     <h3>这是子组件</h3>
-    <button @click="">按钮</button>
+    <button @click="btnClick">按钮</button>
+    <hr>
+    <ccpn></ccpn>
+  </div>
+</template>
+
+<template id="ccpn">
+  <div>
+    <h3>这是子组件中的子组件</h3>
+    <button @click="cbtnClick">按钮</button>
   </div>
 </template>
 </body>
@@ -25,7 +35,31 @@
     data() {
       return {}
     },
-    methods: {}
+    methods: {
+      btnClick() {
+        /**
+         * 使用 $parent 访问最顶级父组件中的属性
+         */
+        console.log(this.$parent);
+        this.$parent.showMessage();
+        console.log(this.$parent.message);
+      },
+    },
+    components: {
+      ccpn: {
+        template: '#ccpn',
+        methods: {
+          cbtnClick() {
+            /**
+             * 使用 $root 访问最顶级父组件中的属性
+             */
+            console.log(this.$root);
+            this.$root.showMessage();
+            console.log(this.$root.message);
+          }
+        }
+      }
+    }
   };
 
   const demo = new Vue({
