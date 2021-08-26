@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>编译的作用域</title>
+</head>
+<body>
+<div id="demo">
+<cpn></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <h2>我是子组件</h2>
+    <p>内容</p>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      cpn:{
+        template:'#cpn'
+      }
+    }
+  })
+</script>
+</html>
