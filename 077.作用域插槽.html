@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作用域插槽</title>
+</head>
+<body>
+
+<div id="demo">
+  <h3>父组件</h3>
+  <hr>
+  <cpn></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h3>子组件</h3>
+  </div>
+</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+  const demo = new Vue({
+    el: '#demo',
+    components: {
+      cpn: {
+        template: '#cpn'
+      }
+    },
+  })
+</script>
+</html>
