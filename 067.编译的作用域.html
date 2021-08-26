@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="demo">
-<cpn></cpn>
+  <cpn v-show="isShow"></cpn>
 </div>
 <template id="cpn">
   <div>
@@ -20,9 +20,17 @@
 
   const demo = new Vue({
     el: '#demo',
+    data: {
+      isShow: true,
+    },
     components: {
-      cpn:{
-        template:'#cpn'
+      cpn: {
+        template: '#cpn',
+        data() {
+          return {
+            isSHow: false
+          }
+        }
       }
     }
   })
