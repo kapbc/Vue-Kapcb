@@ -9,12 +9,40 @@
 <div id="demo">
   <h3>父组件</h3>
   <hr>
-  <cpn></cpn>
+  <cpn>
+    <!--目的是为了获取子组件中的programLanguages数据-->
+    <template slot-scope="slot">
+      <!--slot.data就是在子组件的slot标签中定义的:data中的值-->
+      <span v-for="item in slot.data">{{item}}&nbsp;&nbsp;</span>
+    </template>
+  </cpn>
+  <cpn>
+    <template slot-scope="sonComponent">
+      <ul>
+        <li v-for="item in sonComponent.data">{{item}}&nbsp;&nbsp;</li>
+      </ul>
+    </template>
+  </cpn>
+  <cpnTwo>
+    <template slot-scope="param">
+      <ul>
+        <li v-for="item in param.param">{{item}}&nbsp;&nbsp;</li>
+      </ul>
+    </template>
+  </cpnTwo>
 </div>
 
 <template id="cpn">
   <div>
     <h3>子组件</h3>
+    <slot :data="programLanguages"></slot>
+  </div>
+</template>
+
+<template id="cpnTwo">
+  <div>
+    <h3>子组件二</h3>
+    <slot :param="param"></slot>
   </div>
 </template>
 </body>
@@ -35,8 +63,22 @@
     el: '#demo',
     components: {
       cpn: {
-        template: '#cpn'
-      }
+        template: '#cpn',
+        data() {
+          return {
+            programLanguages: ['Java', 'JavaScript', 'Python', 'Swift', 'Go', 'C#'],
+
+          }
+        }
+      },
+      cpnTwo: {
+        template: '#cpnTwo',
+        data() {
+          return {
+            param: ['钢铁侠', '蜘蛛侠', '闪电侠', '蝙蝠侠']
+          }
+        }
+      },
     },
   })
 </script>
