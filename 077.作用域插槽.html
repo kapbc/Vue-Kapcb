@@ -30,6 +30,11 @@
       </ul>
     </template>
   </cpn-two>
+  <cpn-two>
+    <template slot-scope="param">
+      <span>{{param.param.join(" ,")}}</span>
+    </template>
+  </cpn-two>
 </div>
 
 <template id="cpn">
@@ -69,7 +74,7 @@
             programLanguages: ['Java', 'JavaScript', 'Python', 'Swift', 'Go', 'C#'],
 
           }
-        }
+        },
       },
       cpnTwo: {
         template: '#cpnTwo',
