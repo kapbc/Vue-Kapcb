@@ -21,6 +21,16 @@
 <script src="js/vue.js"></script>
 <script>
 
+  /**
+   * 父组件替换插槽的标签, 但是内容由子组件来提供
+   * 比如:
+   * 子组件中包括一组数据, 比如: programLanguages:['Java','JavaScript','Python','Swift','Go','C#']
+   * 需要在多个界面进行展示
+   *  - 某些界面是水平方向--展示的
+   *  - 某些界面是以列表形式展示的
+   *  - 某些界面直接展示一个数组
+   * 内容在子组件中, 希望父组件告诉我们如何展示, 利用slot作用域插槽就可以
+   */
   const demo = new Vue({
     el: '#demo',
     components: {
