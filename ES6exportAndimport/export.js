@@ -55,5 +55,7 @@ export class Person {
 /**
  * 某些情况下 ,一个模块中包含某个功能 ,但是开发者并不希望给这个功能命名, 而是让导入者自己来命名
  * 这种情况就使用 export default
+ * 并且一个js文件中的export default只能有一个
  */
-// export default
+const countryCode = 'CN';
+export default countryCode;

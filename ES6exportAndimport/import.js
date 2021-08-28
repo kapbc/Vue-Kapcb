@@ -17,6 +17,11 @@ import {logMessage} from "./export.js";
  * 导入整个类
  */
 import {Person} from "./export.js";
+/**
+ * 导入default的时候, 不需要{}, 这种情况下默认导入的是 "./export.js" 中 export default的
+ * 因为一个js文件中的export default只能有一个, 不能存在多个
+ */
+import code from "./export.js";
 
 if (flag) {
   console.log('Kapcb nb!');
@@ -32,3 +37,5 @@ let person = new Person();
 person.name = 'Kapcb';
 person.age = 24;
 person.run();
+
+console.log('My country code is : ' + code);
