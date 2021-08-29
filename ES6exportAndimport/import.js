@@ -22,6 +22,10 @@ import {Person} from "./export.js";
  * 因为一个js文件中的export default只能有一个, 不能存在多个
  */
 import code from "./export.js";
+/**
+ * 导入所有并取别名
+ */
+import * as exportParam from "./export.js";
 
 if (flag) {
   console.log('Kapcb nb!');
@@ -39,3 +43,11 @@ person.age = 24;
 person.run();
 
 console.log('My country code is : ' + code);
+
+if (exportParam.flag) {
+  console.log('-------------------------------------------');
+  console.log('My name is : ' + exportParam.name + ' age is : ' + exportParam.age + ' email is : ' + exportParam.email + ' address is : ' + exportParam.address);
+  let person = new exportParam.Person("Mike", 19);
+  person.run();
+  console.log('-------------------------------------------');
+}
