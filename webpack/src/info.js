@@ -1,3 +1,7 @@
+/**
+ * 使用ES6的语法导出
+ * @type {string}
+ */
 export const name = 'Mike';
 export const age = 18;
 
