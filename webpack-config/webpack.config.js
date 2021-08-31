@@ -7,7 +7,7 @@ module.exports = {
   // 出口
   output: {
     // 路径(动态获取文件路径)
-    path: './dist',
+    path: path.resolve(__dirname, 'dist'),
     // 文件名
     filename: 'bundle.js',
   },

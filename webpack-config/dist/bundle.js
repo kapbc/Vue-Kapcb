@@ -1,0 +1,1 @@
+(()=>{"use strict";new class{name;age;gender;constructor(e,s,a){this.name=e,this.age=s,this.gender=a}showMessage(){console.log("My name is : "+this.name+" age is : "+this.age+" gender is : "+this.gender)}}("Mike",18,"男").showMessage()})();
