@@ -1,0 +1,12 @@
+{
+  "name": "kapcb",
+  "version": "1.0.0",
+  "description": "webpack-loader",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "webpack",
+    "build": "webpack"
+  },
+  "author": "kapcb",
+  "license": "ISC"
+}

@@ -4,8 +4,10 @@ export default {
 }
 
 function HighQualityPersonCheck(person) {
-  if (person.name === 'kapcb' && age <= 24 && gender === '男') {
-    console.log("I'm a high quality person");
+  if (person.name === 'kapcb' && person.age <= 24 && person.gender === '男') {
+    const message = "I'm a high quality person";
+    console.log(message);
+    document.write(message);
   }
 }
 
