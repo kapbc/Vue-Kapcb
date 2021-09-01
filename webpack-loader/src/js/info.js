@@ -1,9 +1,9 @@
 export default {
   Person,
-  highQualityPersonCheck,
+  HighQualityPersonCheck,
 }
 
-let highQualityPersonCheck = function (person) {
+function HighQualityPersonCheck(person) {
   if (person.name === 'kapcb' && age <= 24 && gender === '男') {
     console.log("I'm a high quality person");
   }
