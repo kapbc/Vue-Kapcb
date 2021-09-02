@@ -1,5 +1,5 @@
 {
-  "name": "less",
+  "name": "webpack-less",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.2.0",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
     "style-loader": "^3.2.1",
     "webpack": "^5.51.2"
   }
