@@ -8,5 +8,10 @@
     "build": "webpack"
   },
   "author": "kapcb",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.51.2"
+  }
 }
