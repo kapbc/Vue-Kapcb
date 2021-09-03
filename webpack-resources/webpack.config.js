@@ -16,16 +16,16 @@ module.exports = {
         test: /\.less$/,
         use: [
           {
-            loader: 'style-loader' //create style nodes from JS strings
+            loader: 'style-loader'
           },
           {
-            loader: 'css-loader' // translates CSS into CommonJS
+            loader: 'css-loader'
           },
           {
-            loader: 'less-loader' // compiles less to CSS
+            loader: 'less-loader'
           }
         ]
       }
-    ]
+    ],
   }
 }
