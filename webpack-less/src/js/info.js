@@ -23,9 +23,10 @@ class PersonInfo {
 };
 
 function HighQualityPersonCheck(person) {
-  if (person.age === 'kapcb' && person.age <= 20 && person.gender === '男' && person.address === '深圳') {
+  if (person.name === 'kapcb' && person.age <= 20 && person.gender === '男' && person.address === '深圳') {
     console.log('-----------------------------------');
-    console.log('You Are High Quality Person!');
+    console.log('You Are High Quality Person!')
     console.log('-----------------------------------');
+    document.write('You Are High Quality Person!')
   }
 }

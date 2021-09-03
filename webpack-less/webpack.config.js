@@ -13,7 +13,17 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }, {
         test: /\.less$/,
-        use: ['less-loader',]
+        use: [
+          {
+            loader: 'style-loader' //create style nodes from JS strings
+          },
+          {
+            loader: 'css-loader' // translates CSS into CommonJS
+          },
+          {
+            loader: 'less-loader' // compiles less to CSS
+          }
+        ]
       }
     ]
   }
