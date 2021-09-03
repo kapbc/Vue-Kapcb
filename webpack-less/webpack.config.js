@@ -7,9 +7,14 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
-    rules: {
-      test: /\.css$/,
-      use: ['less-loader', 'style-loader', 'css-loader']
-    }
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }, {
+        test: /\.less$/,
+        use: ['less-loader',]
+      }
+    ]
   }
 }
