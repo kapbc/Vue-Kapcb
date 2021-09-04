@@ -40,6 +40,7 @@ module.exports = {
               // 如果大于limit的限制时, 会使用file-loader模块对文件进行加载
               // 将小于30KB的图片转换成base64的格式
               limit: 1024 * 30,
+              name: 'dist/[name].[hash:16].[ext]'
             }
           }
         ]
