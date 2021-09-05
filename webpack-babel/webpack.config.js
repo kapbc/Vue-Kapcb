@@ -13,20 +13,30 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'}
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
         ]
       },
       {
         test: /\.less$/,
         use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'},
-          {loader: 'less-loader'}
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader'
+          }
         ]
       },
       {
-        test: /\.(img|jpg|jpeg|png|gif)$./,
+        test: /\.(png|jpg|gif|jpeg)$/,
         use: [
           {
             loader: 'url-loader',
@@ -38,6 +48,20 @@ module.exports = {
           }
         ],
         type: 'javascript/auto'
+      },
+      {
+        test: '/\.m?js$/',
+        // exclude 排除
+        // include 包含
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            }
+          }
+        ]
       }
     ]
   }
