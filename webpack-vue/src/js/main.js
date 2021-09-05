@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import Demo from '../vue/demo';
 
 // const demo = new Vue({
 //   el: '#demo',
@@ -21,30 +22,30 @@ import Vue from 'vue';
 //   }
 // });
 
-const demoComponent = {
-  template: `
-    <div>
-    <h2>这是main.js中的demoComponent中的template</h2>
-    {{ message }}
-    <button @click="btnClick">按钮</button>
-    </div>
-  `,
-  data() {
-    return {
-      message: 'Hello Webpack!',
-    }
-  },
-  methods: {
-    btnClick() {
-      alert('button click!');
-    }
-  },
-}
+// const demoComponent = {
+//   template: `
+//     <div>
+//     <h2>这是main.js中的demoComponent中的template</h2>
+//     {{ message }}
+//     <button @click="btnClick">按钮</button>
+//     </div>
+//   `,
+//   data() {
+//     return {
+//       message: 'Hello Webpack!',
+//     }
+//   },
+//   methods: {
+//     btnClick() {
+//       alert('button click!');
+//     }
+//   },
+// };
 
 new Vue({
   el: '#demo',
   template: '<demoComponent/>',
   components: {
-    demoComponent,
+    demoComponent: Demo,
   }
-})
+});
