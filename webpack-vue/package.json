@@ -1,0 +1,22 @@
+{
+  "name": "webpack-vue",
+  "version": "1.0.0",
+  "description": "webpack-vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Vue-kapcb"
+  },
+  "keywords": [
+    "webpack-vue"
+  ],
+  "author": "kapcb",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
+}
