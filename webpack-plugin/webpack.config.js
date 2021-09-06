@@ -2,6 +2,7 @@ const path = require('path');
 // 添加版权的plugin
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/js/main.js',
@@ -32,7 +33,8 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new webpack.BannerPlugin({
-      banner:'Author By Kpacb'
+      banner: 'Author By Kpacb'
     }),
+    new HtmlWebpackPlugin(),
   ]
 }
