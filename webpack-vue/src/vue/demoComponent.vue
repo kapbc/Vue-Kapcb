@@ -23,8 +23,8 @@ export default {
 </script>
 
 <style scoped>
-/*.title {*/
-/*  font-size: 18px;*/
-/*  color: orange;*/
-/*}*/
+.title {
+  font-size: 18px;
+  color: orange;
+}
 </style>
