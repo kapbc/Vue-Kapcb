@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import Demo from '../vue/demo';
-import DemoComponent from '../vue/demoComponent.vue'
+// import Demo from '../vue/demo';
+import DemoComponent from '../vue/demoComponent'
 
 // const demo = new Vue({
 //   el: '#demo',

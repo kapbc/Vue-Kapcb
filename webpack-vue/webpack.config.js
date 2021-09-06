@@ -1,4 +1,5 @@
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: './src/js/main.js',
@@ -53,6 +54,10 @@ module.exports = {
       // vue/dist/vue.esm.js版本中包括了需要的runtime-compiler
       // 如果这里不进行配置指定, 他会默认去使用vue/dist/vue.runtime.js
       'vue$': 'vue/dist/vue.esm.js'
-    }
-  }
+    },
+    extensions: ['.vue']
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+  ]
 }
