@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Demo from '../vue/demo';
+import DemoComponent from '../vue/demoComponent.vue'
 
 // const demo = new Vue({
 //   el: '#demo',
@@ -46,6 +47,6 @@ new Vue({
   el: '#demo',
   template: '<demoComponent/>',
   components: {
-    demoComponent: Demo,
+    demoComponent: DemoComponent,
   }
 });

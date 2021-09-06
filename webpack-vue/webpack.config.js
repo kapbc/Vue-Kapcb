@@ -8,6 +8,41 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '../dist/'
   },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: [
+          {loader: 'vue-loader'}
+        ]
+      },
+      {
+        test: /\.css/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
+      },
+      {
+        test: /\.less/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader'
+          }
+        ]
+      }
+    ]
+  },
   // 配置vue
   resolve: {
     // 在项目的js文件中, 只要有 import Vue from 'vue'; 的导入
