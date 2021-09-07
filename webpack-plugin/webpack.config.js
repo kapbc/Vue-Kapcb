@@ -34,6 +34,9 @@ module.exports = {
     new webpack.BannerPlugin({
       banner: 'Author By Kpacb'
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      // 指定模板, 就会按照webpack.config.js所在的同级目录下的index.html, 依此为模板进行生城
+      template: 'index.html'
+    }),
   ]
 }
