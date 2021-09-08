@@ -46,5 +46,14 @@ module.exports = {
       template: 'index.html'
     }),
     new UglifyJsPlugin(),
-  ]
+  ],
+  devServer: {
+    // 需要热部署的文件对象
+    contentBase: './dist',
+    // 是否需要实时进行监听, 实时刷新
+    inline: true,
+    // 端口号
+    port: 3000,
+    // historyApiFallback : 在SPA页面中, 依赖HTML5的history模式
+  }
 }
