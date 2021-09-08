@@ -23,7 +23,11 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.1"
   },
+  "browser": {
+    "crypto": false
+  },
   "dependencies": {
+    "crypto-browserify": "^3.12.0",
     "vue": "^2.6.14"
   }
 }
