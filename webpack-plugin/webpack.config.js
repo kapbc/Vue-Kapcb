@@ -49,11 +49,15 @@ module.exports = {
   ],
   devServer: {
     // 需要热部署的文件对象
-    contentBase: './dist',
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
     // 是否需要实时进行监听, 实时刷新
-    inline: true,
+    hot: true,
     // 端口号
     port: 3000,
     // historyApiFallback : 在SPA页面中, 依赖HTML5的history模式
+    open: true
   }
 }
