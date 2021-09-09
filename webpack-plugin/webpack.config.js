@@ -32,7 +32,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       crypto: false
     },
-    extensions: ['.vue']
+    extensions: ['.vue', '.ts', '.js', '.sass', '.css']
   },
   plugins: [
     // 解析vue插件
@@ -50,12 +50,13 @@ module.exports = {
   ],
   devServer: {
     // 需要热部署的文件对象
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
+    // static: {
+    //   directory: path.join(__dirname, 'public'),
+    // },
+    contentBase: './dist',
+    inline: true,
     // 是否需要实时进行监听, 实时刷新
-    hot: true,
+    // hot: true,
     // 端口号
     port: 3000,
     // historyApiFallback : 在SPA页面中, 依赖HTML5的history模式
