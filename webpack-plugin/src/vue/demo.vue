@@ -11,7 +11,7 @@ export default {
   name: "demo",
   data() {
     return {
-      message: 'Hello Vue!'
+      message: 'Hello Vue! Webpack dev server'
     }
   },
   methods: {
