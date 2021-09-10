@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>热部署</p>
     <h3 class="title">demo中的组件</h3>
     <button @click="btnClick">按钮</button>
   </div>
@@ -10,7 +11,7 @@ export default {
   name: "demo",
   data() {
     return {
-      message: 'Hello Vue!',
+      message: 'Hello Vue! This is hot devtool',
     }
   },
   methods: {
