@@ -1,9 +1,13 @@
+# 判断是否为root, 如果root为true才会进行解析
 root = true
 
 [*]
 charset = utf-8
 indent_style = space
 indent_size = 2
+# 不同系统的换行符
 end_of_line = lf
+# 新增一行
 insert_final_newline = true
+# 去除代码的空格
 trim_trailing_whitespace = true

@@ -1,3 +1,4 @@
+# es lint 需要忽略的文件
 /build/
 /config/
 /dist/
