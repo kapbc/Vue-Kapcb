@@ -13,3 +13,6 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+// runtime-compiler
+// template -> ast -> render(functions) -> virtual dom -> UI
