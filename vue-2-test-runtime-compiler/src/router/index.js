@@ -14,7 +14,7 @@ export default new Router({
     },
     {
       path: '/kapcb',
-      name: 'kapcb',
+      name: 'Kapcb',
       component: Kapcb
     }
   ]
