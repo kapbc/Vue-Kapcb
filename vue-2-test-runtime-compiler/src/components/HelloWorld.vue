@@ -80,6 +80,7 @@
         </a>
       </li>
     </ul>
+    <router-link to="/kapcb">进入kapcb</router-link>
   </div>
 </template>
 
