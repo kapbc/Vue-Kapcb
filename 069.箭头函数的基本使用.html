@@ -9,6 +9,30 @@
 </body>
 <script>
   // 箭头函数也是一种定义函数的方式
+  // 1.定义函数的方式: function
+  let demo = function () {
+    console.log('定义函数')
+  }
 
+  // 2.对象字面量中定义函数
+  const kapcb = {
+    eat () {
+      console.log('Object function')
+    }
+  }
+
+  // 3.在ES6中的箭头函数
+  // const ccc = (参数列表) => {
+  //
+  // }
+
+  const ccc = () => {
+    console.log('无参箭头函数')
+    console.log(this)
+  }
+
+  demo()
+  kapcb.eat()
+  ccc()
 </script>
 </html>
