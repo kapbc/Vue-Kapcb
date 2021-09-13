@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>箭头函数中的this的使用</title>
+</head>
+<body>
+
+</body>
+<script>
+  // 什么时候写箭头函数
+  // 将一个函数作为参数传递给另外一个函数的时候就可以使用箭头函数
+  setTimeout(function () {
+    console.log(this)
+  }, 1000)
+
+  setTimeout(() => {
+    console.log(this)
+  }, 1000)
+
+
+  /**
+   * 结论: 箭头函数中的this是如何查找的
+   * 向外层作用域中一层层查找this, 直到有this的定义
+   * @type {{run(): void}}
+   */
+  const demo = {
+
+    run () {
+      setTimeout(function () {
+        console.log('-------------普通函数-------------')
+        // this 是window对象
+        console.log(this)
+        console.log('-------------普通函数-------------')
+      })
+
+      setTimeout(() => {
+        console.log('-------------箭头函数-------------')
+        // this 是obj对象
+        console.log(this)
+        console.log('-------------箭头函数-------------')
+      })
+
+      console.log('-------------函数中的this-------------')
+      console.log(this)
+      console.log('-------------函数中的this-------------')
+    },
+  }
+
+  demo.run()
+</script>
+</html>
