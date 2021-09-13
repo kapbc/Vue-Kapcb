@@ -8,6 +8,24 @@
 
 </body>
 <script>
+  // 1.参数问题
+  // 两个参数
+  const sum = (num1, num2) => {
+    return num1 + num2
+  }
 
+  // 一个参数
+  const powerOne = (num) => {
+    return num * num
+  }
+
+  // 一个参数的时候, 小括号可以省略掉
+  const powerTwo = num => {
+    return num * num
+  }
+
+  console.log('sum function : ' + sum(1, 2))
+  console.log('power one function : ' + powerOne(2))
+  console.log('power two function : ' + powerTwo(3))
 </script>
 </html>
