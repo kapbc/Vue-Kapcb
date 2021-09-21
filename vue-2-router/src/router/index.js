@@ -3,6 +3,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Demo from '@/components/Demo'
 import HelloWorld from '@/components/HelloWorld'
+import index from '@/components/index'
 
 // 1.通过Vue.use(插件) : 安装插件(通过vue的方式安装插件)
 Vue.use(Router)
@@ -11,6 +12,13 @@ Vue.use(Router)
 const routes = [
   {
     path: '/',
+    // 重定向
+    redirect: '',
+    component: index
+  },
+  {
+    // 访问默认显示页面
+    path: '/helloWorld',
     name: 'HelloWorld',
     component: HelloWorld
   },
