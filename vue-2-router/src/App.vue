@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <!-- 决定之后路径改变之后, 渲染的内容出现在哪个地方, 相当于占位符的作用 -->
     <router-view/>
   </div>
 </template>
