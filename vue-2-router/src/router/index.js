@@ -28,3 +28,4 @@ export default new Router({
 })
 
 // 3.将router对象传入到Vue实例
+// 在src目录下的main.js中导入router并将其挂载到vue实例上
