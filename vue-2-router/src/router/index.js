@@ -34,7 +34,8 @@ export default new Router({
   // 配置路径和组件之间的映射关系
   routes,
   // 浏览器路由模式, 默认是使用hash, 这里修改为HTML5的history模式
-  mode: 'history'
+  mode: 'history',
+  linkActiveClass: 'active'
 })
 
 // 3.将router对象传入到Vue实例
