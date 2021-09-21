@@ -8,7 +8,7 @@ import HelloWorld from '@/components/HelloWorld'
 Vue.use(Router)
 
 // 配置路由组件映射关系
-const routers = [
+const routes = [
   {
     path: '/',
     name: 'HelloWorld',
@@ -24,5 +24,7 @@ const routers = [
 // 2.创建VueRouter路由对象
 export default new Router({
   // 配置路径和组件之间的映射关系
-  routes: routers
+  routes
 })
+
+// 3.将router对象传入到Vue实例
