@@ -81,6 +81,7 @@
       </li>
     </ul>
     <button @click="userClick">访问user列表页</button>
+    <router-link :to="'user/'+this.userId">访问user列表</router-link>
   </div>
 </template>
 
@@ -89,12 +90,13 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      userId: 123456789
     }
   },
   methods: {
     userClick () {
-      this.$router.push('user/kapcb')
+      this.$router.push('user/' + this.userId)
     }
   }
 }

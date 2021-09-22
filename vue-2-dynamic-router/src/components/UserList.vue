@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>user list page</h3>
+    <strong>current user id is : {{ getUserId }}</strong>
   </div>
 </template>
 
@@ -10,6 +11,13 @@ export default {
   data () {
     return {
       showMessage: 'Hello Vue!'
+    }
+  },
+  computed: {
+    getUserId () {
+      console.log(this.$route.params)
+      console.log(this.$route.params.userId)
+      return this.$route.params.userId
     }
   }
 }
