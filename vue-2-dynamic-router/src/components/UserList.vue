@@ -1,7 +1,8 @@
 <template>
   <div>
     <h3>user list page</h3>
-    <strong>current user id is : {{ getUserId }}</strong>
+    <strong>current user id is : {{ getUserId }}</strong><br/>
+    <strong>current user id is : {{ $route.params.userId }}</strong>
   </div>
 </template>
 
