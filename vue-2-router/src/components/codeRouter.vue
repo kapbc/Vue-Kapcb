@@ -17,7 +17,7 @@ export default {
       this.$router.push('demo')
     },
     helloWorldClick () {
-      this.$router.push('helloWorld')
+      this.$router.replace('helloWorld')
     },
     indexClick () {
       this.$router.push('/')
