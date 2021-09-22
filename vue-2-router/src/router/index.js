@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Demo from '@/components/Demo'
 import HelloWorld from '@/components/HelloWorld'
 import index from '@/components/index'
+import codeRouter from '@/components/codeRouter'
 
 // 1.通过Vue.use(插件) : 安装插件(通过vue的方式安装插件)
 Vue.use(Router)
@@ -26,6 +27,11 @@ const routes = [
     path: '/demo',
     name: 'Demo',
     component: Demo
+  },
+  {
+    path: '/codeRouter',
+    name: 'CodeRouter',
+    component: codeRouter
   }
 ]
 

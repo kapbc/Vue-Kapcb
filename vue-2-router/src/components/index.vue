@@ -7,6 +7,7 @@
     <!-- active-class属性用于指定被选中时的class样式 -->
     <router-link tag="button" to="/helloWorld" active-class="active" replace>访问HelloWords页面</router-link>
     <router-link tag="button" to="/demo" replace>访问demo页面</router-link>
+    <router-link tag="button" to="/codeRouter">访问codeRouter页面</router-link>
     <router-view></router-view>
   </div>
 </template>
