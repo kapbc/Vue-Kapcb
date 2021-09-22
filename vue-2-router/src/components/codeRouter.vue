@@ -13,10 +13,17 @@ export default {
   name: 'codeRouter',
   methods: {
     demoClick () {
-      this.$route.query('demo')
+      // 通过代码修改路由
+      this.$router.push('demo')
+    },
+    helloWorldClick () {
+      this.$router.push('helloWorld')
+    },
+    indexClick () {
+      this.$router.push('/')
     },
     backClick () {
-      this.$route.go(-1)
+      this.$router.go(-1)
     }
   }
 }

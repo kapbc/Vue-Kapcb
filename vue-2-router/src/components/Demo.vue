@@ -2,7 +2,8 @@
   <div>
     <h3 class="title">{{ title }}</h3>
     <button @click="alert">按钮</button>
-    <router-link to="/">返回上一页</router-link>
+    <router-link to="/">返回首页</router-link>
+    <button @click="codeRouterClick">进入code route 页面</button>
   </div>
 </template>
 
@@ -18,6 +19,9 @@ export default {
   methods: {
     alert () {
       alert(this.alertMessage)
+    },
+    codeRouterClick () {
+      this.$router.push('codeRouter')
     }
   }
 }
