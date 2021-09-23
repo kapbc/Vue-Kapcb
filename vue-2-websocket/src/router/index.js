@@ -5,7 +5,6 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
-
 const routes = [
   {
     path: '/',
