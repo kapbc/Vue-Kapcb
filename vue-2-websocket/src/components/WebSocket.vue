@@ -18,10 +18,10 @@ export default {
     }
   },
   mounted () {
-
+    this.initWebSocket()
   },
   destroyed () {
-
+    this.onClose()
   },
   methods: {
     initWebSocket () {
