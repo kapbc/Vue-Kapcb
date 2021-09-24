@@ -5,7 +5,7 @@ Vue.use(Router)
 
 const Demo = () => import('@/components/Demo')
 const HelloWorld = () => import('@/components/HelloWorld')
-const DemoList = () => import('@/components/DemoList.vue')
+const DemoList = () => import('@/components/DemoList')
 const DemoMessage = () => import('@/components/DemoMessage')
 
 const routes = [
@@ -18,6 +18,11 @@ const routes = [
     path: '/demo',
     component: Demo,
     children: [
+      {
+        // 配置默认路由
+        path: '',
+        redirect:'demoList'
+      },
       {
         // 子组件不需要在path中添加/
         path: 'demoList',

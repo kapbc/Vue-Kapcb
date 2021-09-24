@@ -1,22 +1,15 @@
 <template>
   <div>
     <h3>demo组件</h3>
-    <button @click="demoListClick">demoList</button>
-    <button @click="demoMessageClick">demoMessage</button>
+    <router-view></router-view>
+    <router-link to="/demo/demoList">demoList</router-link>
+    <router-link to="/demo/demoMessage">demoMessage</router-link>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Demo',
-  methods: {
-    demoListClick () {
-      this.$router.push('/demo/demoList')
-    },
-    demoMessageClick () {
-      this.$router.push('demoMessage')
-    }
-  }
 }
 </script>
 
