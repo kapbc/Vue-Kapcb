@@ -33,12 +33,14 @@ export default {
       this.webSocket.onClose = this.onClose
     },
     sendMessage () {
-      const message = this.message
-      const userId = this.userId
+      const param = {
+        message: this.message,
+        userId: this.userId
+      }
       try {
-        this.webSocket.send(JSON.stringify({ message, userId }))
+        this.webSocket.send(JSON.stringify(param))
       } catch (err) {
-        console.log('web socket send message error, error messsage is : ' + err.code)
+        console.log('web socket send message error, error message is : ' + err.code)
       }
     },
     onOpen () {
