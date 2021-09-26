@@ -5,32 +5,32 @@
     <ul>
       <li>
         <a
-          href="https://vuejs.org"
-          target="_blank"
+            href="https://vuejs.org"
+            target="_blank"
         >
           Core Docs
         </a>
       </li>
       <li>
         <a
-          href="https://forum.vuejs.org"
-          target="_blank"
+            href="https://forum.vuejs.org"
+            target="_blank"
         >
           Forum
         </a>
       </li>
       <li>
         <a
-          href="https://chat.vuejs.org"
-          target="_blank"
+            href="https://chat.vuejs.org"
+            target="_blank"
         >
           Community Chat
         </a>
       </li>
       <li>
         <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
+            href="https://twitter.com/vuejs"
+            target="_blank"
         >
           Twitter
         </a>
@@ -38,8 +38,8 @@
       <br>
       <li>
         <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
+            href="http://vuejs-templates.github.io/webpack/"
+            target="_blank"
         >
           Docs for This Template
         </a>
@@ -49,37 +49,39 @@
     <ul>
       <li>
         <a
-          href="http://router.vuejs.org/"
-          target="_blank"
+            href="http://router.vuejs.org/"
+            target="_blank"
         >
           vue-router
         </a>
       </li>
       <li>
         <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
+            href="http://vuex.vuejs.org/"
+            target="_blank"
         >
           vuex
         </a>
       </li>
       <li>
         <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
+            href="http://vue-loader.vuejs.org/"
+            target="_blank"
         >
           vue-loader
         </a>
       </li>
       <li>
         <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
+            href="https://github.com/vuejs/awesome-vue"
+            target="_blank"
         >
           awesome-vue
         </a>
       </li>
     </ul>
+    <router-view></router-view>
+    <router-link to="/alertMessage">alert message</router-link>
   </div>
 </template>
 
@@ -99,14 +101,17 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }
