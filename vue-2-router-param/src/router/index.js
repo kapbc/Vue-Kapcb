@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const HelloWorld = () => import('@/components/HelloWorld')
+const UserProfile = () => import('@/components/UserProfile')
 const AlertMessage = () => import('@/components/AlertMessage')
 
 const routes = [
