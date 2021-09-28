@@ -80,9 +80,9 @@
         </a>
       </li>
     </ul>
-    <router-view></router-view>
     <router-link to="/alertMessage">Alert message</router-link>
-    <router-link :to="'userProfile/'+userId">User Profile</router-link>
+    <router-link :to="'userProfile/' + this.userId">User Profile</router-link>
+    <router-view></router-view>
   </div>
 </template>
 

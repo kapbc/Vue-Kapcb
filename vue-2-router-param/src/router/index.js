@@ -19,7 +19,8 @@ const routes = [
         component: AlertMessage
       }
     ]
-  }, {
+  },
+  {
     path: '/userProfile:userId',
     name: 'UserProfile',
     component: UserProfile

@@ -8,10 +8,6 @@
 <script>
 export default {
   name: 'UserProfile',
-  data () {
-    return {}
-  },
-  methods: {},
   computed: {
     getUserId () {
       return this.$route.params.userId
