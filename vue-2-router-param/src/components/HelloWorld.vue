@@ -81,7 +81,8 @@
       </li>
     </ul>
     <router-view></router-view>
-    <router-link to="/alertMessage">alert message</router-link>
+    <router-link to="/alertMessage">Alert message</router-link>
+    <router-link :to="'userProfile/'+userId">User Profile</router-link>
   </div>
 </template>
 
@@ -90,7 +91,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      userId: 123456789
     }
   }
 }

@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>User Profile</h3>
+    <h4>Current User Id Is : {{ getUserId }}</h4>
   </div>
 </template>
 
@@ -10,7 +11,12 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {},
+  computed: {
+    getUserId () {
+      return this.$route.params.userId
+    }
+  }
 }
 </script>
 
