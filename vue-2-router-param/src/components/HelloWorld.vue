@@ -83,6 +83,7 @@
     <router-link to="/alertMessage">Alert message</router-link>
     <router-link :to="'userProfile/' + this.userId">User Profile</router-link>
     <button @click="buyerCenter">Buyer Center</button>
+    <router-link :to="{path:'/buyerCenter',query:{name:'Mike Chen', userId:12345678}}">Buyer Center</router-link>
     <router-view></router-view>
   </div>
 </template>
