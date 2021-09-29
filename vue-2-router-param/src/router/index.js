@@ -5,6 +5,7 @@ Vue.use(Router)
 
 const HelloWorld = () => import('@/components/HelloWorld')
 const UserProfile = () => import('@/components/UserProfile')
+const BuyerCenter = () => import('@/components/BuyerCenter')
 const AlertMessage = () => import('@/components/AlertMessage')
 
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
     path: '/userProfile/:userId',
     name: 'UserProfile',
     component: UserProfile
+  },
+  {
+    path: '/buyerCenter',
+    name: 'BuyerCenter',
+    component: BuyerCenter
   }
 ]
 

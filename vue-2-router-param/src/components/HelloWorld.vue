@@ -82,6 +82,7 @@
     </ul>
     <router-link to="/alertMessage">Alert message</router-link>
     <router-link :to="'userProfile/' + this.userId">User Profile</router-link>
+    <button @click="buyerCenter">Buyer Center</button>
     <router-view></router-view>
   </div>
 </template>
@@ -93,6 +94,11 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       userId: 123456789
+    }
+  },
+  methods: {
+    buyerCenter () {
+      this.$router.push('buyerCenter')
     }
   }
 }
