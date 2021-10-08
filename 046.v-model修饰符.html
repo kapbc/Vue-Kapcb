@@ -27,26 +27,26 @@
 <script src="js/vue.js"></script>
 <script>
   Vue.filter('lazyMessage', function (username) {
-    return '您输入的内容是 : ' + username;
-  });
+    return '您输入的内容是 : ' + username
+  })
 
   Vue.filter('trimMessage', function (password) {
-    return '您输入的密码是 : ' + password;
-  });
+    return '您输入的密码是 : ' + password
+  })
 
   Vue.filter('numberMessage', function (age) {
-    return '您输入的年龄是 : ' + age + ' 类型是 : ' + (typeof age);
-  });
+    return '您输入的年龄是 : ' + age + ' 类型是 : ' + (typeof age)
+  })
 
   const demo = new Vue({
     el: '#demo',
-    data() {
+    data () {
       return {
         username: '',
         password: '',
         age: 0
       }
     }
-  });
+  })
 </script>
 </html>

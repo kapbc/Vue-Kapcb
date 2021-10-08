@@ -17,17 +17,17 @@
 <script src="js/vue.js"></script>
 <script>
   Vue.filter('showMessage', function (hobbits) {
-    return '您选中的爱好是 : ' + hobbits;
-  });
+    return '您选中的爱好是 : ' + hobbits
+  })
 
   const demo = new Vue({
     el: '#demo',
-    data() {
+    data () {
       return {
         hobbies: [],
         originalHobbies: ['篮球', '足球', '网球', '乒乓球', '羽毛球']
       }
     },
-  });
+  })
 </script>
 </html>

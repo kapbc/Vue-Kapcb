@@ -31,17 +31,17 @@
    * 在Vue实例初始化之前定义过滤器
    */
   Vue.filter('chooseHobbits', function (hobbits) {
-    return '您选择的爱好是 : ' + hobbits;
-  });
+    return '您选择的爱好是 : ' + hobbits
+  })
 
   const demo = new Vue({
     el: '#demo',
-    data() {
+    data () {
       return {
         choose: false,
         hobbits: []
       }
     }
-  });
+  })
 </script>
 </html>

@@ -19,16 +19,16 @@
         <h2>vue.js组件化开发</h2>
         <p>Kapcb Awesome Man!</p>
         </div>`
-  });
+  })
 
   /**
    * 2.注册主键, 并定义组件标签的名称
    */
-  Vue.component('kapcb-component', kapcbComponent);
+  Vue.component('kapcb-component', kapcbComponent)
 
   const demo = new Vue({
     el: '#demo',
-    data() {
+    data () {
       return {
         message: 'Kapcb Awesome Man!',
       }

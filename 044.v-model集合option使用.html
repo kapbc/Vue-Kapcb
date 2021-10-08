@@ -32,20 +32,20 @@
 <script>
   const demo = new Vue({
     el: '#demo',
-    data() {
+    data () {
       return {
         fruit: '梨子',
         hobbits: []
       }
     },
     filters: {
-      selectOption(name) {
-        return '您选择的水果是 : ' + name;
+      selectOption (name) {
+        return '您选择的水果是 : ' + name
       },
-      multiSelect(name) {
-        return '您选择的爱好是 : ' + name;
+      multiSelect (name) {
+        return '您选择的爱好是 : ' + name
       }
     }
-  });
+  })
 </script>
 </html>
