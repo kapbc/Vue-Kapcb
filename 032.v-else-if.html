@@ -31,21 +31,21 @@
       isLogin: false,
     },
     methods: {
-      _logout() {
-        console.log('------------------logout------------------');
-        this.password = '';
-        this.username = '';
-        this.isLogin = false;
+      _logout () {
+        console.log('------------------logout------------------')
+        this.password = ''
+        this.username = ''
+        this.isLogin = false
       },
-      _login() {
-        console.log('------------------login------------------');
-        console.log('username : ' + this.username + ' password : ' + this.password);
-        console.log(typeof this.username);
-        console.log(typeof this.password);
-        console.log(this.username === 'kapcb' && this.password === '123456');
-        this.isLogin = this.username === 'kapcb' && this.password === '123456';
+      _login () {
+        console.log('------------------login------------------')
+        console.log('username : ' + this.username + ' password : ' + this.password)
+        console.log(typeof this.username)
+        console.log(typeof this.password)
+        console.log(this.username === 'kapcb' && this.password === '123456')
+        this.isLogin = this.username === 'kapcb' && this.password === '123456'
       }
     }
-  });
+  })
 </script>
 </html>

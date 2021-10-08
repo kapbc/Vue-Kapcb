@@ -32,23 +32,23 @@
       failMessage: 'Please login first!',
     },
     methods: {
-      _login() {
+      _login () {
         if (this.username === 'kapcb' && this.password === '123456') {
-          this.isLogin = true;
+          this.isLogin = true
         } else {
-          this.failMessage = 'Invalid Username Or Password!';
+          this.failMessage = 'Invalid Username Or Password!'
         }
       },
-      _reset() {
-        this.username = '';
-        this.password = '';
+      _reset () {
+        this.username = ''
+        this.password = ''
         // this.isLogin = false;
       },
-      _keyUp() {
-        this.failMessage = 'Please login first!';
+      _keyUp () {
+        this.failMessage = 'Please login first!'
       }
     }
-  });
+  })
 </script>
 </body>
 </html>
