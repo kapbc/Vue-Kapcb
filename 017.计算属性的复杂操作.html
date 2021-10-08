@@ -24,30 +24,30 @@
    * @param price
    * @constructor
    */
-  function Book(id, name, price) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
+  function Book (id, name, price) {
+    this.id = id
+    this.name = name
+    this.price = price
   }
 
-  let book = new Book();
-  book.id = 1;
-  book.name = "Java 核心技术";
-  book.price = 100;
-  console.log(book);
-  console.log(book.id);
+  let book = new Book()
+  book.id = 1
+  book.name = 'Java 核心技术'
+  book.price = 100
+  console.log(book)
+  console.log(book.id)
 
-  let book1 = new Book(2, "Java 编程思想", 80);
-  console.log(book1);
+  let book1 = new Book(2, 'Java 编程思想', 80)
+  console.log(book1)
 
   let demo = new Vue({
     el: '#demo',
     data: {
       books: [
-        new Book(1, "Java 核心技术", 100),
-        new Book(2, "Java 编程思想", 80),
-        new Book(3, "Java 并发编程的艺术", 70),
-        new Book(4, "Effect Java", 70)
+        new Book(1, 'Java 核心技术', 100),
+        new Book(2, 'Java 编程思想', 80),
+        new Book(3, 'Java 并发编程的艺术', 70),
+        new Book(4, 'Effect Java', 70)
       ],
       firstName: 'Mike',
       lastName: 'Chen'
@@ -59,18 +59,18 @@
        * @returns {string}
        */
       fullName: function () {
-        return this.firstName + '-' + this.lastName;
+        return this.firstName + '-' + this.lastName
       },
 
       /**
        * total cost
        * @returns {number}
        */
-      totalCost() {
+      totalCost () {
         return this.books.map(e => e.price).reduce(function (prev, cur, index, array) {
-          console.log('prev value is : ' + prev + ' current value is : ' + cur + ' index is : ' + index + ' array is : ' + array);
+          console.log('prev value is : ' + prev + ' current value is : ' + cur + ' index is : ' + index + ' array is : ' + array)
           return prev + cur
-        });
+        })
       },
 
       /**
@@ -78,21 +78,21 @@
        * @returns {number}
        */
       totalCostTwo: function () {
-        let total = 0;
-        this.books.map(e => e.price).forEach(s => total += s);
-        return total;
+        let total = 0
+        this.books.map(e => e.price).forEach(s => total += s)
+        return total
       },
 
       /**
        * total cost
        * @returns {number}
        */
-      totalThree() {
-        let total = 0;
+      totalThree () {
+        let total = 0
         for (let i = 0; i < this.books.length; i++) {
-          total += this.books[i].price;
+          total += this.books[i].price
         }
-        return total;
+        return total
       },
 
       /**
@@ -100,12 +100,12 @@
        * of 直接拿到的是每个元素
        * @returns {number}
        */
-      totalFour() {
-        let total = 0;
+      totalFour () {
+        let total = 0
         for (let book of this.books) {
-          total += book.price;
+          total += book.price
         }
-        return total;
+        return total
       },
 
       /**
@@ -113,14 +113,14 @@
        * in 拿到的是下标
        * @returns {number}
        */
-      totalFive() {
-        let total = 0;
+      totalFive () {
+        let total = 0
         for (let index in this.books) {
-          total += this.books[index].price;
+          total += this.books[index].price
         }
-        return total;
+        return total
       }
     },
-  });
+  })
 </script>
 </html>

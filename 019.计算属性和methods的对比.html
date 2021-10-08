@@ -30,24 +30,24 @@
     },
     computed: {
       fullName: {
-        get() {
-          console.log('------------------调用computed get------------------');
-          return this.firstName + ' ' + this.lastName;
+        get () {
+          console.log('------------------调用computed get------------------')
+          return this.firstName + ' ' + this.lastName
         },
-        set(newValue) {
-          console.log('------------------调用computed set------------------');
-          const name = newValue.split(' ');
-          this.firstName = name[0];
-          this.lastName = name[1];
+        set (newValue) {
+          console.log('------------------调用computed set------------------')
+          const name = newValue.split(' ')
+          this.firstName = name[0]
+          this.lastName = name[1]
         }
       }
     },
     methods: {
       getFullName: function () {
-        console.log('------------------调用methods------------------');
-        return this.firstName + ' ' + this.lastName;
+        console.log('------------------调用methods------------------')
+        return this.firstName + ' ' + this.lastName
       }
     },
-  });
+  })
 </script>
 </html>
