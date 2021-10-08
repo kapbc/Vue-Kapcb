@@ -1,9 +1,9 @@
-let name = 'Mike Chen';
-let age = 18;
-let flag = true;
+let name = 'Mike Chen'
+let age = 18
+let flag = true
 
-function sum(num1, num2) {
-  return num1 + num2;
+function sum (num1, num2) {
+  return num1 + num2
 }
 
 /**
@@ -18,15 +18,15 @@ export {
 /**
  * 2.导出变量方式二
  */
-export let email = 'eircccallroot@yeah.net';
-export let address = '深圳';
+export let email = 'eircccallroot@yeah.net'
+export let address = '深圳'
 
 /**
  * 3.导出函数方式一
  */
-export function logMessage(message) {
-  console.log('这是export.js中的导出函数');
-  console.log(message);
+export function logMessage (message) {
+  console.log('这是export.js中的导出函数')
+  console.log(message)
 }
 
 /**
@@ -41,14 +41,14 @@ export class Person {
    * @param name String
    * @param age int
    */
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
+  constructor (name, age) {
+    this.name = name
+    this.age = age
   }
 
-  run() {
-    console.log('这是Person类中的run方法');
-    console.log('My name is : ' + this.name + ' age is : ' + this.age);
+  run () {
+    console.log('这是Person类中的run方法')
+    console.log('My name is : ' + this.name + ' age is : ' + this.age)
   }
 }
 
@@ -57,5 +57,5 @@ export class Person {
  * 这种情况就使用 export default
  * 并且一个js文件中的export default只能有一个
  */
-const countryCode = 'CN';
-export default countryCode;
+const countryCode = 'CN'
+export default countryCode
