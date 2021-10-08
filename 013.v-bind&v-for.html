@@ -21,7 +21,7 @@
 <script src="js/vue.js"></script>
 <script>
 
-  const selection = ['挪威的森林', '灰色轨迹', '不再犹豫', '大地', '海阔天空'];
+  const selection = ['挪威的森林', '灰色轨迹', '不再犹豫', '大地', '海阔天空']
 
   let demo = new Vue({
     el: '#demo',
@@ -30,12 +30,12 @@
       activeIndex: -1,
     },
     methods: {
-      click(index) {
-        console.log('当前点击了 : ' + index);
-        this.activeIndex = index;
+      click (index) {
+        console.log('当前点击了 : ' + index)
+        this.activeIndex = index
       },
     }
-  });
+  })
 
 </script>
 </html>

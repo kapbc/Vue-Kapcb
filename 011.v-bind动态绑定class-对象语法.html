@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
-  
+
   <title>v-bind动态绑定class</title>
   <style>
       .active {
@@ -34,7 +34,7 @@
 </div>
 
 </body>
-  
+
 <script src="js/vue.js"></script>
 <script>
 
@@ -50,15 +50,15 @@
       classStyle: classStyle,
     },
     methods: {
-      clickActive() {
-        this.classStyle.active = !this.classStyle.active;
-        this.classStyle.inActive = !this.classStyle.inActive;
+      clickActive () {
+        this.classStyle.active = !this.classStyle.active
+        this.classStyle.inActive = !this.classStyle.inActive
       },
       getClasses: function () {
-        return {active: this.classStyle.active, inActive: this.classStyle.inActive}
+        return { active: this.classStyle.active, inActive: this.classStyle.inActive }
       }
     }
   })
 </script>
-  
+
 </html>
