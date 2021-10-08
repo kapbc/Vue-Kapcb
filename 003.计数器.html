@@ -13,7 +13,7 @@
   <button @click="increase">+</button>
   <!--减少-->
   <button v-on:click="decrease">-</button>
-<!--  <button v-on:click="count&#45;&#45;">-</button>-->
+  <!--  <button v-on:click="count&#45;&#45;">-</button>-->
 </div>
 </body>
 <script src="js/vue.js"></script>
@@ -42,39 +42,39 @@
      * v-on:(事件) 表示监听的事件
      */
     methods: {
-      increase() {
+      increase () {
         /**
          * 不要直接使用 count, 直接使用会在<script>标签内部找全局变量
          * 也不要使用 demo.count,
          * this.count 表示在当前对象的data中寻找count (使用this.)
          */
-        this.count++;
-        this.alertMessage("点击了增加按钮");
+        this.count++
+        this.alertMessage('点击了增加按钮')
       },
-      decrease() {
+      decrease () {
         if (this.count === 0) {
-          return;
+          return
         }
-        this.count--;
-        this.alertMessage("点击减少按钮");
+        this.count--
+        this.alertMessage('点击减少按钮')
       },
       /**
        * 传统方式定义方法
        * @param message String
        */
       alertMessage: function (message) {
-        console.log(message);
+        console.log(message)
       },
     },
     beforeCreate: function () {
-      console.log("Vue Call Back before create method");
+      console.log('Vue Call Back before create method')
     },
     created: function () {
-      console.log("Vue Call Back created method");
+      console.log('Vue Call Back created method')
     },
     mounted: function () {
-      console.log("Vue Call Back mounted method");
+      console.log('Vue Call Back mounted method')
     }
-  });
+  })
 </script>
 </html>
