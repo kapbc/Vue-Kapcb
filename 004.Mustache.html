@@ -13,7 +13,7 @@
   <h2>{{message}} {{messageSuffix}}</h2>
   <!--可以是一个表达式-->
   <h2>{{count + 1}}</h2>
-  <h3>{{firstName + " " + lastName}}</h3>
+  <h3>{{firstName + ' ' + lastName}}</h3>
 </div>
 </body>
 <script src="js/vue.js"></script>
@@ -23,11 +23,12 @@
     el: document.getElementById('demo'),
     data: {
       message: 'kapcb nb',
-      messageSuffix: "bad",
+      messageSuffix: 'bad',
       count: 1,
       firstName: 'Mike',
       lastName: 'Chen'
     }
-  });
+  })
+
 </script>
 </html>
