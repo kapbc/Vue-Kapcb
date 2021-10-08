@@ -15,7 +15,7 @@
 </body>
 <script>
 
-  let elementsByTagName = document.getElementsByTagName('button');
+  let elementsByTagName = document.getElementsByTagName('button')
 
   /**
    * 使用var会有作用域问题
@@ -35,11 +35,11 @@
      * ES6中的let是有块级作用域的(if/for)
      */
     (function (i) {
-      var index = i + 1;
+      var index = i + 1
       elementsByTagName[i].addEventListener('click', function () {
-        console.log('点击第 : ' + index + ' 按钮!');
+        console.log('点击第 : ' + index + ' 按钮!')
       })
-    })(i);
+    })(i)
   }
 
   /**
@@ -47,8 +47,8 @@
    */
   for (let i = 0; i < elementsByTagName.length; i++) {
     elementsByTagName[i].addEventListener('click', function () {
-      console.log('let--点击第 : ' + (i + 1) + ' 按钮!');
-    });
+      console.log('let--点击第 : ' + (i + 1) + ' 按钮!')
+    })
   }
 
 </script>

@@ -16,26 +16,26 @@
    * 2、变量混淆
    */
 
-  console.log('提前声明 : ' + name);
+  console.log('提前声明 : ' + name)
 
   {
-    var name = 'Kapcb';
-    console.log('在代码块中执行 : ' + name);
+    var name = 'Kapcb'
+    console.log('在代码块中执行 : ' + name)
   }
 
-  console.log('声明之后在代码块后执行 : ' + name);
+  console.log('声明之后在代码块后执行 : ' + name)
   /**
    * if、for都没有块级作用域
    */
   if (true) {
-    var firstName = 'Mike';
+    var firstName = 'Mike'
 
     func = function () {
-      console.log('在循环内部的函数中执行 : ' + firstName);
-    }();
+      console.log('在循环内部的函数中执行 : ' + firstName)
+    }()
 
     // func();
   }
-  console.log('在代码块外部执行 : ' + firstName);
+  console.log('在代码块外部执行 : ' + firstName)
 </script>
 </html>

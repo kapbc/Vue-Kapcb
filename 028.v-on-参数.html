@@ -30,28 +30,28 @@
       count: 0,
     },
     methods: {
-      add() {
-        this.count++;
+      add () {
+        this.count++
       },
-      _addCount(event) {
-        console.log('调用addCount方法', event);
-        this.count++;
+      _addCount (event) {
+        console.log('调用addCount方法', event)
+        this.count++
       },
-      _addTen(num, event) {
-        console.log('调用addTen方法', event);
-        console.log(num);
-        this.count += num;
+      _addTen (num, event) {
+        console.log('调用addTen方法', event)
+        console.log(num)
+        this.count += num
       }
     },
-  });
+  })
 
   /**
    * 如果函数需要参数, 但是调用函数时没有传参, 那么函数的形参为undefined
    */
-  function eat(food) {
-    console.log(food);
-  };
+  function eat (food) {
+    console.log(food)
+  }
 
-  eat();
+  eat()
 </script>
 </html>

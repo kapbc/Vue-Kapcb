@@ -12,22 +12,22 @@
    * 什么是对象字面量
    * {} 就是对象字面量
    */
-      // const obj1= new Object(); 实际开发中声明对象都不这样写
-  const obj = {};
+    // const obj1= new Object(); 实际开发中声明对象都不这样写
+  const obj = {}
 
   /**
    * ES6之前
    * 1.属性的简写
    */
-  var name = 'Kpacb';
-  var age = 18;
+  var name = 'Kpacb'
+  var age = 18
   var person = {
     name: name,
     age: age,
   }
 
-  console.log('ES6之前对象写法 : ');
-  console.log(person);
+  console.log('ES6之前对象写法 : ')
+  console.log(person)
 
   /**
    * ES6之后
@@ -38,16 +38,16 @@
     name,
     age,
     run: function (name) {
-      console.log(name + ' 在奔跑');
+      console.log(name + ' 在奔跑')
     },
-    eat(name) {
-      console.log(name + ' 在吃东西');
+    eat (name) {
+      console.log(name + ' 在吃东西')
     }
   }
-  console.log('ES6之后对象写法 : ');
-  console.log(per);
+  console.log('ES6之后对象写法 : ')
+  console.log(per)
 
-  per.eat(per.name);
-  per.run(per.name);
+  per.eat(per.name)
+  per.run(per.name)
 </script>
 </html>
