@@ -4,25 +4,25 @@
  */
 const modelOne = (function () {
   // 定义导出对象
-  let obj = {};
+  let obj = {}
 
-  let name = 'Mike Chen';
-  let age = 18;
+  let name = 'Mike Chen'
+  let age = 18
 
-  function sum(num1, num2) {
-    return num1 + num2;
-  };
+  function sum (num1, num2) {
+    return num1 + num2
+  }
 
-  let flag = true;
+  let flag = true
 
   if (flag) {
-    console.log(sum(10, 20));
+    console.log(sum(10, 20))
   }
-  ;
 
-  obj.flag = flag;
-  obj.sum = sum;
+
+  obj.flag = flag
+  obj.sum = sum
 
   // 返回出去, 使用modelOne接收
-  return obj;
-})();
+  return obj
+})()

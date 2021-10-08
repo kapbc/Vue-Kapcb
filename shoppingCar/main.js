@@ -1,6 +1,6 @@
 const shoppingCar = new Vue({
   el: '#shopping-car',
-  data() {
+  data () {
     return {
       disabled: false,
       books: [{
@@ -38,62 +38,62 @@ const shoppingCar = new Vue({
           price: 66.80,
           count: 1,
         }]
-    };
+    }
   },
   methods: {
-    _increaseCount(index) {
-      this.books[index].count += 1;
+    _increaseCount (index) {
+      this.books[index].count += 1
     },
-    _decreaseCount(index) {
+    _decreaseCount (index) {
       if (this.books[index].count > 1) {
-        this.books[index].count -= 1;
+        this.books[index].count -= 1
       }
     },
-    _getFinalPrice(price) {
+    _getFinalPrice (price) {
       <!--数字的 toFixed(需要保留的位数)-->
-      return '￥' + price.toFixed(2);
+      return '￥' + price.toFixed(2)
     },
-    _remove(index) {
-      this.books.splice(index, 1);
+    _remove (index) {
+      this.books.splice(index, 1)
     }
   },
   /**
    * 过滤器会自动将参数传递到函数中来
    */
   filters: {
-    showPrice(price) {
-      return '￥' + price.toFixed(2);
+    showPrice (price) {
+      return '￥' + price.toFixed(2)
     }
   },
   computed: {
-    totalPrice() {
-      let totalPrice = 0;
+    totalPrice () {
+      let totalPrice = 0
       this.books.forEach((value => {
-        totalPrice += value.price * value.count;
-      }));
-      return totalPrice;
+        totalPrice += value.price * value.count
+      }))
+      return totalPrice
     },
     totalPriceForIn: function () {
-      let totalPrice = 0;
+      let totalPrice = 0
       for (const index in this.books) {
-        totalPrice += this.books[index].price * this.books[index].count;
+        totalPrice += this.books[index].price * this.books[index].count
       }
-      return totalPrice;
+      return totalPrice
     },
-    totalPriceForReduce() {
+    totalPriceForReduce () {
       return this.books.map((value) => {
         return value.price * value.count
       }).reduce((previousValue, currentValue) => {
-        return previousValue + currentValue;
+        return previousValue + currentValue
       })
     },
-    totalPriceForReduceTwo() {
+    totalPriceForReduceTwo () {
       return this.books.reduce(((previousValue, currentValue) => {
-        return previousValue + currentValue.price * currentValue.count;
-      }), 0);
+        return previousValue + currentValue.price * currentValue.count
+      }), 0)
     }
   },
-});
+})
 
 /**
  * 函数式编程
@@ -101,14 +101,14 @@ const shoppingCar = new Vue({
  * true: 当返回值为true时, 函数内部会自动将这次回调的参数加入到新的数组中
  * false: 当返回值为false时, 函数内部会过滤掉当前元素
  */
-const array = [10, 20, 30, 40, 100, 200, 300, 400, 70, 80, 30];
+const array = [10, 20, 30, 40, 100, 200, 300, 400, 70, 80, 30]
 let number = array.filter((value) => {
-  return value >= 100;
+  return value >= 100
 }).reduce(((previousValue, currentValue) => {
-  console.log('previous value is : ' + previousValue + ' current value is : ' + currentValue);
-  return previousValue + currentValue;
-}));
-console.log(number);
+  console.log('previous value is : ' + previousValue + ' current value is : ' + currentValue)
+  return previousValue + currentValue
+}))
+console.log(number)
 
 /**
  * 会遍历 array.length次
@@ -116,6 +116,6 @@ console.log(number);
  * 第二次 previousValue : 就是第一次函数调用时的返回值 , currentValue : 20
  */
 array.reduce((previousValue, currentValue) => {
-  console.log('previousValue is : ' + previousValue + ' currentValue is : ' + currentValue);
-  return previousValue;
-}, 0);
+  console.log('previousValue is : ' + previousValue + ' currentValue is : ' + currentValue)
+  return previousValue
+}, 0)
