@@ -18,13 +18,13 @@
     template: `<div>
                 <h2>这是父组件</h2>
               </div>`
-  };
+  }
 
   const son = {
     template: `<div>
                 <h2>这是子组件</h2>
               </div>`
-  };
+  }
 
   /**
    * 声明子组件构造器
@@ -55,7 +55,7 @@
     components: {
       'super-son': superSon,
     }
-  });
+  })
 
   const demo = new Vue({
     el: '#demo',
@@ -67,6 +67,6 @@
       sonComponent: son,
       superComponent: superComponent
     },
-  });
+  })
 </script>
 </html>

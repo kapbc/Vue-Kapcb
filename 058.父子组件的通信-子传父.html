@@ -28,23 +28,23 @@
 
   const componentSon = {
     template: '#componentSon',
-    data() {
+    data () {
       return {
         categories: [
-          {categoryId: 100001, categoryName: '热门推荐'},
-          {categoryId: 100002, categoryName: '手机数码'},
-          {categoryId: 100003, categoryName: '生活用品'},
-          {categoryId: 100004, categoryName: '服装搭配'},
-          {categoryId: 100005, categoryName: '零食小吃'},
-          {categoryId: 100006, categoryName: '儿童玩具'},
-          {categoryId: 100007, categoryName: '汽车配件'},
-          {categoryId: 100008, categoryName: '旅行装备'},
+          { categoryId: 100001, categoryName: '热门推荐' },
+          { categoryId: 100002, categoryName: '手机数码' },
+          { categoryId: 100003, categoryName: '生活用品' },
+          { categoryId: 100004, categoryName: '服装搭配' },
+          { categoryId: 100005, categoryName: '零食小吃' },
+          { categoryId: 100006, categoryName: '儿童玩具' },
+          { categoryId: 100007, categoryName: '汽车配件' },
+          { categoryId: 100008, categoryName: '旅行装备' },
         ]
       }
     },
     methods: {
-      clickCategory(categoryId) {
-        console.log('子组件发送的数据 : ' + categoryId);
+      clickCategory (categoryId) {
+        console.log('子组件发送的数据 : ' + categoryId)
         /**
          * 发送事件
          * 第一个参数: 事件的名称
@@ -65,8 +65,8 @@
        * 处理监听到的子组件事件的方法
        * @param categoryId 接收子组件传递过来的参数
        */
-      categoryComponentClick(categoryId) {
-        console.log('父组件接收到的数据 : ' + categoryId);
+      categoryComponentClick (categoryId) {
+        console.log('父组件接收到的数据 : ' + categoryId)
       }
     }
   })

@@ -33,12 +33,12 @@
    */
   const componentTwo = {
     template: '#componentTwo',
-    data() {
+    data () {
       return {
         sonMessage: 'Hi This is son!'
       }
     }
-  };
+  }
 
   /**
    * 父组件
@@ -46,7 +46,7 @@
    */
   const componentOne = {
     template: '#componentOne',
-    data() {
+    data () {
       return {
         parentMessage: 'Hi! This is parent!'
       }
@@ -54,13 +54,13 @@
     components: {
       componentTwo
     }
-  };
+  }
 
   const demo = new Vue({
     el: '#demo',
     components: {
       componentOne,
     }
-  });
+  })
 </script>
 </html>

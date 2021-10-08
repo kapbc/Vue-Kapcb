@@ -26,12 +26,12 @@
      * 组件的data必须为函数, 不能为对象属性
      * @returns {{}}
      */
-    data() {
+    data () {
       return {
         componentMessage: 'Hello! This is component message',
-      };
+      }
     }
-  };
+  }
 
   /**
    * 组件是不可以访问Vue实例中的数据的
@@ -39,14 +39,14 @@
    */
   const demo = new Vue({
     el: '#demo',
-    data() {
+    data () {
       return {
         message: 'Kapcb Awesome Man!'
-      };
+      }
     },
     components: {
       componentOne
     },
-  });
+  })
 </script>
 </html>
