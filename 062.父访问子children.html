@@ -21,17 +21,17 @@
 
   const cpn = {
     template: '#cpn',
-    data() {
+    data () {
       return {
         name: '我是子组件中的name属性',
       }
     },
     methods: {
-      showMessage() {
-        console.log('showMessage');
+      showMessage () {
+        console.log('showMessage')
       }
     },
-  };
+  }
 
   const demo = new Vue({
     el: '#demo',
@@ -39,17 +39,17 @@
       cpn,
     },
     methods: {
-      btnClick() {
-        console.log(this.$children);
+      btnClick () {
+        console.log(this.$children)
         /**
          * 父组件调用子组件的方法
          */
-        this.$children[0].showMessage();
+        this.$children[0].showMessage()
         /**
          * 父组件调用子组件的属性
          */
-        console.log(this.$children[0]._data.name);
-        console.log(this.$children[0].name);
+        console.log(this.$children[0]._data.name)
+        console.log(this.$children[0].name)
       },
     },
   })

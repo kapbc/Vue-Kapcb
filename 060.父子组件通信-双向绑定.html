@@ -28,7 +28,7 @@
 <script>
   const cpn = {
     template: '#cpn',
-    data() {
+    data () {
       return {
         inputNumber1: this.num1,
         inputNumber2: this.num2
@@ -47,19 +47,19 @@
       }
     },
     methods: {
-      inputNumber1Listener(event) {
-        const value = event.target.value;
-        console.log('value is : ' + value);
-        this.inputNumber1 = value;
-        this.$emit('input-one', value);
+      inputNumber1Listener (event) {
+        const value = event.target.value
+        console.log('value is : ' + value)
+        this.inputNumber1 = value
+        this.$emit('input-one', value)
       },
-      inputNumber2Listener(event) {
-        const value = event.target.value;
-        this.inputNumber2 = value;
+      inputNumber2Listener (event) {
+        const value = event.target.value
+        this.inputNumber2 = value
         this.$emit('input-two', value)
       }
     }
-  };
+  }
 
   const vue = new Vue({
     el: '#demo',
@@ -68,20 +68,20 @@
       num2: 0
     },
     methods: {
-      handlerInput1(number) {
-        console.log(number);
-        console.log(typeof number);
-        this.num1 = number * 1;
+      handlerInput1 (number) {
+        console.log(number)
+        console.log(typeof number)
+        this.num1 = number * 1
       },
-      handlerInput2(number) {
-        console.log(number);
-        console.log(typeof number);
-        this.num2 = parseInt(number);
+      handlerInput2 (number) {
+        console.log(number)
+        console.log(typeof number)
+        this.num2 = parseInt(number)
       }
     },
     components: {
       cpn
     }
-  });
+  })
 </script>
 </html>

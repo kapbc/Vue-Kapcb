@@ -32,7 +32,7 @@
   </cpn-two>
   <cpn-two>
     <template slot-scope="param">
-      <span>{{param.param.join(" ,")}}</span>
+      <span>{{param.param.join(' ,')}}</span>
     </template>
   </cpn-two>
 </div>
@@ -69,7 +69,7 @@
     components: {
       cpn: {
         template: '#cpn',
-        data() {
+        data () {
           return {
             programLanguages: ['Java', 'JavaScript', 'Python', 'Swift', 'Go', 'C#'],
 
@@ -78,7 +78,7 @@
       },
       cpnTwo: {
         template: '#cpnTwo',
-        data() {
+        data () {
           return {
             param: ['钢铁侠', '蜘蛛侠', '闪电侠', '蝙蝠侠']
           }
