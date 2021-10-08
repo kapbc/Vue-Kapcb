@@ -8,15 +8,15 @@
 
 <script>
 export default {
-  name: "demo",
-  data() {
+  name: 'demo',
+  data () {
     return {
       message: 'Hello Vue! This is hot devtool',
     }
   },
   methods: {
-    btnClick() {
-      alert(this.message);
+    btnClick () {
+      alert(this.message)
     }
   }
 }

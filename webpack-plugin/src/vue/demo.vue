@@ -8,15 +8,15 @@
 
 <script>
 export default {
-  name: "demo",
-  data() {
+  name: 'demo',
+  data () {
     return {
       message: 'Hello Vue! Webpack dev server'
     }
   },
   methods: {
-    _btnClick() {
-      alert('button click!');
+    _btnClick () {
+      alert('button click!')
     }
   }
 }

@@ -6,14 +6,14 @@ export default {
     <button @click="btnClick">按钮</button>
     </div>
   `,
-  data() {
+  data () {
     return {
       message: 'Hello Webpack!',
     }
   },
   methods: {
-    btnClick() {
-      alert('button click!');
+    btnClick () {
+      alert('button click!')
     }
   },
-};
+}

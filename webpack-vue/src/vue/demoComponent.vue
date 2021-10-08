@@ -8,15 +8,15 @@
 
 <script>
 export default {
-  name: "demoComponent",
-  data() {
+  name: 'demoComponent',
+  data () {
     return {
       message: 'Hello. This is Demo Component!',
     }
   },
   methods: {
-    btnClick() {
-      alert('This is button click event!');
+    btnClick () {
+      alert('This is button click event!')
     }
   },
 }

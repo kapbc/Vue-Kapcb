@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'vue'
 // import Demo from '../vue/demo';
 import DemoComponent from '../vue/demoComponent'
 
@@ -49,4 +49,4 @@ new Vue({
   components: {
     demoComponent: DemoComponent,
   }
-});
+})
