@@ -82,8 +82,8 @@
     </ul>
     <router-link to="/alertMessage">Alert message</router-link>
     <router-link :to="'userProfile/' + this.userId">User Profile</router-link>
+    <button @click="userClick">User Profile</button>
     <button @click="buyerCenter">Buyer Center</button>
-<!--    <button :to="{path:'/buyerCenter', param:{name:'Kapcb', userId:87654321}}">Buyer Center</button>-->
     <router-link :to="{path:'/buyerCenter',query:{name:'Mike Chen', userId:12345678}}">Buyer Center</router-link>
     <router-view></router-view>
   </div>
@@ -101,6 +101,10 @@ export default {
   methods: {
     buyerCenter () {
       this.$router.push('buyerCenter')
+    },
+    userClick () {
+      console.log('jump into user profile')
+      this.$router.push('userProfile/' + this.userId)
     }
   }
 }
