@@ -10,3 +10,5 @@ new Vue({
   router,
   render: h => h(App)
 })
+
+console.log('main.js 中的router : ' + router)

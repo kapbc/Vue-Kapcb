@@ -100,7 +100,13 @@ export default {
   },
   methods: {
     buyerCenter () {
-      this.$router.push('buyerCenter')
+      this.$router.push({
+        path: '/buyerCenter',
+        query: {
+          name: 'Kapcb',
+          userId: 87654321
+        }
+      })
     },
     userClick () {
       console.log('jump into user profile')
