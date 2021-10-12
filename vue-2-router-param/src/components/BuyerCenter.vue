@@ -9,6 +9,18 @@
 <script>
 export default {
   name: 'BuyerCenter',
+  // 组件创建完成时回调
+  created () {
+  },
+
+  // 将组件中的模板挂载到DOM元素上时回调
+  mounted () {
+  },
+
+  // 界面发生更新时调用
+  // 比如
+  updated () {
+  },
   data () {
     return {}
   },
