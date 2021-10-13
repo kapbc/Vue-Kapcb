@@ -13,23 +13,35 @@ const routes = [
     path: '/',
     name: 'HelloWorld',
     component: HelloWorld,
+    meta: {
+      title: 'Hello World'
+    },
     children: [
       {
         path: 'alertMessage',
         name: 'AlertMessage',
-        component: AlertMessage
+        component: AlertMessage,
+        meta: {
+          title: 'Alert Message'
+        }
       }
     ]
   },
   {
     path: '/userProfile/:userId',
     name: 'UserProfile',
-    component: UserProfile
+    component: UserProfile,
+    meta: {
+      title: 'User Profile'
+    }
   },
   {
     path: '/buyerCenter',
     name: 'BuyerCenter',
-    component: BuyerCenter
+    component: BuyerCenter,
+    meta: {
+      title: 'Buyer Center'
+    }
   }
 ]
 

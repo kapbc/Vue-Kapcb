@@ -34,7 +34,7 @@ console.log(kapcb.age)
 router.beforeEach((to, from, next) => {
 
   // to 路由跳转的目标
-  document.title = to.title
+  document.title = to.meta.title
   // from 路由跳转起始点
 
   // 调用父类的next方法, 不调用会无法跳转页面
