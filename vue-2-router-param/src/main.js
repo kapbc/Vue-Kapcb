@@ -41,6 +41,8 @@ router.beforeEach((to, from, next) => {
   document.title = to.matched[0].meta.title
   // from 路由跳转起始点
 
+  console.log('before each')
+
   // 调用父类的next方法, 不调用会无法跳转页面
   next()
 })
@@ -49,3 +51,7 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from) => {
   console.log('after each')
 })
+
+// 上面使用的导航守卫, 被称之为全局守卫
+// 1.路由独享的守卫
+// 2.组件内的守卫
