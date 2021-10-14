@@ -31,6 +31,9 @@ Object.defineProperty(kapcb, 'age', {
 console.log(kapcb)
 console.log(kapcb.age)
 
+
+// 前置钩子(钩子:回调)
+// 前置守卫(guard)
 router.beforeEach((to, from, next) => {
 
   console.log(to)
@@ -40,4 +43,9 @@ router.beforeEach((to, from, next) => {
 
   // 调用父类的next方法, 不调用会无法跳转页面
   next()
+})
+
+// 如果时后置钩子, 也就是afterEach, 不需要主动调用next()函数
+router.afterEach((to, from) => {
+  console.log('after each')
 })
