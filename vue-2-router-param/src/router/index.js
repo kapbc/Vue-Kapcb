@@ -41,7 +41,13 @@ const routes = [
     component: BuyerCenter,
     meta: {
       title: 'Buyer Center'
-    }
+    },
+    beforeEnter: (to, from, next) => {
+      console.log('独享路由守卫 before enter')
+
+      // 一定要调用next方法, 否则页面跳转会无效
+      next()
+    },
   }
 ]
 
