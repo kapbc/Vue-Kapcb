@@ -27,6 +27,12 @@ export default {
     console.log('Buyer Center Component Data Updated!')
     console.log('name 属性发生改变了')
   },
+
+  //
+  destroyed () {
+    console.log('Buyer Center Component Destoryed!')
+  },
+
   data () {
     return {
       name: 'kapcb'
