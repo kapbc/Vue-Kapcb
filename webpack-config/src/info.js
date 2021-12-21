@@ -6,7 +6,6 @@ class Person {
   age
   gender
 
-
   constructor (name, age, gender) {
     this.name = name
     this.age = age
